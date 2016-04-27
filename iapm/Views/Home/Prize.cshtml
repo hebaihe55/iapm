@@ -1,0 +1,55 @@
+﻿@model IEnumerable<iapm.Models.Ticket>
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>奖品</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bg3">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3><a href="/home/Index" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /><a href="/home/game"><img src="/images/back.png" /></a></h3>
+        </header>
+        <div class="prize">
+            
+            <h3><img src="/images/ico21.png" /><br />奖品一经兑换，不可退换，请慎重选择。<br />数量有限，先到先得。</h3>
+            <ul>
+
+@foreach (var item in Model)
+{
+                <li>
+                    <div class="prizePic">
+                    
+                        <div><a href="/Home/PrizeDetail/@Html.DisplayFor(modelItem => item.Ticketid)"><img src='@Html.DisplayFor(modelItem => item.detailImg)'/></a></div>
+                        <p class="p1">
+                            @Html.DisplayFor(modelItem => item.title)
+                        </p>
+
+
+                        <p  class="p2"> @Html.DisplayFor(modelItem => item.iconcount) 枚金币</p>
+                  
+                    </div>
+                    <div class="number">
+                        <span>数量：@Html.DisplayFor(modelItem => item.quantity)/已领：0</span>
+                        <p><img src="/images/ico27.png"></p>
+                    </div>
+                </li>
+            
+}
+
+
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

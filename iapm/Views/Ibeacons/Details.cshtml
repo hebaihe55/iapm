@@ -1,0 +1,98 @@
+﻿@model iapm.Models.Ibeacon
+
+@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Ibeacon</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.code)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.code)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.floor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.floor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.bueness)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.bueness)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.demo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.demo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.minifen)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.minifen)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.maxifen)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.maxifen)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dbtime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dbtime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.detime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.detime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dfen)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dfen)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Ibeaconid }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

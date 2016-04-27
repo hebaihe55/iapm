@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>游戏</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bg5">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3><a href="/home/Index" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /><a href="#"><img src="/images/back.png" /></a></h3>
+        </header>
+        <div style="text-align:center">
+            <img src="~/images/b.gif" style="margin-top:100px; width:80%" />
+        </div>
+    </div>
+    <script type="text/javascript">
+    var t=setTimeout("timedCount()",4000);
+
+    function timedCount()  {
+   location.href="/home/game"
+    }
+
+    </script>
+</body>
+</html>

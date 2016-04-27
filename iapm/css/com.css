@@ -1,0 +1,138 @@
+﻿/* CSS Document */
+ol li{
+        list-style-type:decimal;
+        list-style-position:inside;
+}
+.mt10{ margin-top:10px;}
+.mt5{ margin-top:5px;}
+.left{ float:left;}
+.right{ float:right;}
+/* clearfix */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; overflow: hidden; }
+.clearfix { zoom: 1; }
+.bg1{ background:#fff7e5;}
+.bg2{ background:url(../images/ico3.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
+.bg3{ background-color: #fdf9e3 ; background-size:100% auto;}
+.bg4{ background:url(../images/ico19.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
+.bg5{ background:url(../images/ico30.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
+.bg6{ background:url(../images/ico31.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
+
+.wrap{ max-width:640px; min-width:320px; margin:0 auto; padding:0; position:relative;}
+.head{ background:#ead7b5; padding:1.2% 0; text-align:center;}
+.head h3{position:relative;}
+.head h3 img{width:22.267%;}
+.head a{position:absolute; width:10.67%; right:3.125%;}
+.head h3 a img{width:100%;}
+
+/*兑换*/
+.userInfo{ color:#8d7d6b; padding:20px 0; margin:0 4%;}
+.userInfo h3{ font-size:18px;}
+.userInfo span{ padding:5px 0 15px 0; display:block; color:#000; font-size:14px;}
+.userInfo p{ font-size:16px; padding:3px 0;}
+.sumbtn{ padding:20px 0; text-align:center;}
+.sumbtn img{ width:43.73%;} 
+
+/*兑换券*/
+.exchange{ position:absolute; display:none; padding:20px 0; background:#fff; width:90%; left:5%; top:60px; border:2px solid #ead7b5; border-radius:10px;}
+.exchange p{ margin:0 5%;}
+.exchange p a{ color:#8d7d6b;}
+.exchange h3{text-align:center; line-height:30px; border-bottom:1px dashed #dbdbdb; padding-bottom:15px; margin-bottom:15px;}
+.exchange h3 span{color:#8d7d6b;}
+.exchange p.code{ text-align:center; color:#999; font-size:12px; line-height:24px;}
+.exchange p.code strong{ color:#333; font-size:16px;}
+.exchange p.code img{ width:60%;}
+
+/*立即使用*/
+.useIt{padding:20px 0; background:#fff; top:60px; border:2px solid #ead7b5; border-radius:10px; margin:10px 3% 0 3%;}
+.useIt h3{text-align:center; line-height:30px; border-bottom:1px dashed #dbdbdb; padding-bottom:15px; margin-bottom:15px;}
+.useIt h3 span{color:#8d7d6b;}
+.useIt h3 a{ color:#999; text-decoration:underline;}
+.useIt h3 img{width:43.73%; margin-top:10px;}
+.useInfo{ margin:0 5%;}
+.useInfo h4{ line-height:28px; font-size:16px; color:#000; position:relative; border-bottom:1px solid #f2f2f2; padding-bottom:5px;}
+.useInfo h4 span{ color:#ababab; font-size:14px;}
+.useInfo h4 a{ position:absolute; width:10%; top:10px; right:0;}
+.other li{ height:55px; line-height:55px; position:relative; display:block; border-bottom:1px solid #f1f1f1;}
+.other li i{ width:20px; height:25px; position:absolute; right:0; top:15px; background:url(../images/ico1.png) no-repeat;}
+.other li a{ float:right; color:#999; margin-right:25px;}
+
+/*成果*/
+.result{ text-align:center; padding:40px 0; padding-top:100px;}
+.result img{ width:50%;}
+.result p{ line-height:30px; color:#7f6d59; padding:30px 0; font-size:16px;}
+.memberdo{ text-align:center;}
+.memberdo img{ width:32.27%;}
+.memberdo a{ margin:0 5%;}
+
+/*游戏地图*/
+.gameMap{ margin:0 5%; text-align:center;}
+.gameMap h3{ line-height:100px; font-size:24px; color:#7f6d59; font-weight:normal;}
+.gameMap span{ width:40%; margin:4% 3%; display:inline-block;}
+.gameMap h3 img{ width:50%; margin-top:50px;}
+.mapDetail{ margin:0 3.125%; margin-top:100px; position:relative;}
+.mapDetail i{ position:absolute; width:13px; height:13px; background:url(../images/ico14.png) no-repeat;}
+.mapDetail i.p1{ top:50px; left:40%;}
+.mapDetail i.p2{ top:70px; left:80%;}
+.mapDetail i.p3{ top:80px; left:30%;}
+.mapDetail i.p4{ top:100px; left:60%;}
+
+/*故事开始*/
+.storyBegin{ margin:30px 15%;}
+.storyBegin img.word{ width:30%; margin-left:50px;}
+.doMore{ text-align:center;}
+.doMore img{ width:29%;}
+.doMore a{ margin:0 1%;}
+.agreeIt{ text-align:center; line-height:40px; margin-top:30px;}
+.agreeIt span{ background:url(../images/ico20.png); font-size:14px; padding:0 10px; color:#7f6d59; display:inline-block;}
+.agreeIt input{ margin-right:5px; padding:3px; vertical-align:middle;}
+
+/*奖品*/
+.prize{ margin:20px 3.125%;}
+.prize h3{ line-height:24px; text-align:center; font-weight:normal; margin-bottom:10px;}
+.prize h3 img{ width:70%;}
+.prize li{ width:41.46%; margin:0 3%; margin-bottom:10px; text-align:center; float:left;}
+.prize li .prizePic{ border:1px solid #d3d3d3; position:relative; background:#fff;}
+.prize li .prizePic i{ width:35%; position:absolute; left:0; top:0;}
+.prize li .prizePic .p1{  position:absolute; bottom:20px; color:#000; background:#fff; width:100%;filter:alpha(opacity=80); -moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8;}
+.prize li .prizePic .p2{  position:absolute; bottom:0; color:#000; background:#fff; width:100%;filter:alpha(opacity=80); -moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8;}
+
+.prize li .number{ margin-top:10px; color:#000; font-size:12px;}
+.prize li .number span{ background:#fff; border-radius:10px; padding:3px 10px;}
+.prize li .number img{ margin-top:10px; width:60%;}
+
+/*奖品详情*/
+.prizeDetail{ text-align:center; color:#7f6d59;}
+.prizeDetail h3{ line-height:100px; font-size:24px;}
+.prizeDetail img{ width:80%; margin-bottom:15px;}
+.prizeDetail p{ line-height:30px; font-size:16px;}
+
+/*游戏*/
+.game{ color:#000; font-size:40px; line-height:100px; text-align:center;}
+.gameInfo{ margin:40px 3.125%;}
+.gameInfo p{ text-align:center; color:#7f6d59; line-height:40px;}
+
+.bgFix{ height:100%; width:100%; background:#000; top:0; position:fixed; display:none;  filter:alpha(opacity=50); /*IE滤镜，透明度50%*/
+-moz-opacity:0.5; /*Firefox私有，透明度50%*/
+opacity:0.5;/*其他，透明度50%*/
+z-index:2;
+}
+.integral{width:80%; position:fixed; left:10%; top:150px; height:40%; text-align:center;}
+.integral p{background:url(../images/ico33.png) no-repeat; height:75%; padding:10% 0; line-height:70px; background-size:100% 100%; font-size:60px; color:#ff141a; font-weight:bold; -webkit-text-stroke: 1px #fff}
+.integral p span{ font-size:40px;}
+.exchangeBtn{ margin-top:30px;}
+.exchangeBtn img{ width:50%;}
+
+@media (max-width: 320px){
+.bg2{ background:url(../images/ico3.png) no-repeat #fdf9e3 0 120px; background-size:100% auto;}
+.bg4{ background:url(../images/ico19.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
+.bg5{ background:url(../images/ico30.png) no-repeat #fdf9e3 0 90px; background-size:100% auto;}
+.bg6{ background:url(../images/ico31.png) no-repeat #fdf9e3 0 90px; background-size:100% auto;}
+
+.result{ padding-top:40px;}
+.result p{ padding:10px 0;}
+.gameMap h3 img{ margin-top:20px;}
+.gameInfo p{line-height:32px;}
+.integral p{ line-height:50px;}
+.integral p span{ font-size:30px;}
+}

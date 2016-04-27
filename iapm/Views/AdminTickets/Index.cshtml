@@ -1,0 +1,72 @@
+﻿@model IEnumerable<iapm.Models.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iconcount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.btime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.etime)
+        </th>
+      
+     
+     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iconcount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.btime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.etime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.detailImg)
+        </td>
+     
+      
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Ticketid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Ticketid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Ticketid })
+        </td>
+    </tr>
+}
+
+</table>
