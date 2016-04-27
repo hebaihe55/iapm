@@ -32,6 +32,10 @@ namespace iapm.Utils
         private static string ticket;
         private static int texpires_in;
 
+        //卡券
+        private static string kqticket;
+        private static int kqtexpires_in;
+
         //用户信息票据
         private static string caccess_token;
         private static int cexpires_in;
@@ -42,13 +46,45 @@ namespace iapm.Utils
         public static string secret { get; set; }
         public static string noncestr { get; set; }
         public static string timestamp { get; set; }
+        public static string card_id { get; set; }
+        
         public static string url { get; set; }
         public static string signature
         { get {
                 string string1 = string.Format("jsapi_ticket={0}&noncestr={1}&timestamp={2}&url={3}", Ticket, noncestr, timestamp, url);
 
                 return Utils.SHA1_Hash(string1);
-            } }
+            }
+        }
+
+
+        public static string kqsignature
+        {
+            get
+            {
+                Dictionary<string, string> dic = new Dictionary<string, string>();
+                dic.Add("timestamp", timestamp);
+                dic.Add("card_id", card_id);
+                dic.Add("card_id", card_id);
+                dic.Add("api_ticket", Kqticket);
+                dic.Add("nonce_str", noncestr);
+                var dicSort = from objDic in dic orderby objDic.Value  select objDic;
+                string string1 = "";
+                foreach (KeyValuePair<string, string > kvp in dicSort)
+                {
+                    string1 += kvp.Value;
+                }
+
+
+                  
+
+
+
+
+                return Utils.SHA1_Hash(string1);
+            }
+        }
+
 
         public static string Access_token
         {
@@ -126,6 +162,33 @@ namespace iapm.Utils
            
         }
 
+        public static string Kqticket
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(kqticket) && (kqtexpires_in + 7000) > Utils.ConvertDateTimeInt(DateTime.Now))
+                {
+                    return kqticket;
+                }
+
+                string strJson = kqtticket();
+
+                
+                    JsonData jd = LitJson.JsonMapper.ToObject(strJson);
+                if (jd["errcode"].ToString() == "0")
+                {
+                    kqticket = jd["ticket"].ToString();
+                    kqtexpires_in = Utils.ConvertDateTimeInt(DateTime.Now);
+                    
+                    return kqticket;
+                }
+
+                return "";
+            }
+
+
+        }
+
         /// <summary>
         /// 得到页面票据
         /// </summary>
@@ -137,6 +200,20 @@ namespace iapm.Utils
             string result= HttpService.Get(url);
 
             Log.Info("getcticket", result);
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private static string kqtticket()
+        {
+            string url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token="+ Access_token + "&type=wx_card";
+
+            string result = HttpService.Get(url);
+
+            Log.Info("kqtticket", result);
             return result;
         }
 

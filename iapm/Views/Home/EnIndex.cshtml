@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <title>首页</title>
+    <title>IAPM</title>
     <link href="/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="/css/com.css" rel="stylesheet" type="text/css" />
     <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
@@ -24,24 +24,24 @@
         <p style="text-align:right;width:90%; margin-top:5px;"><a href="/home/index">中文</a> |<a href="/home/Enindex">ENGLISH</a> </p>
         <div class="storyBegin">
             
-            <p><img class="word" src="/images/ico15.png"></p>
+            <p><img class="word" src="/images/enico15.png"></p>
          <div style="height:153px"></div>
         </div>
         <div class="doMore">
-            <a href="javascript:void(0)" onclick="agree()"><img src="/images/ico16.png"></a>
-            <a href="/home/rule"><img src="/images/ico17.png"></a>
-            <a href="/home/gamemap"><img src="/images/ico18.png"></a>
+            <a href="javascript:void(0)" onclick="agree()"><img src="/images/enico16.png"></a>
+            <a href="/home/Enrule"><img src="/images/enico17.png"></a>
+            <a href="/home/Engamemap"><img src="/images/enico18.png"></a>
         </div>
-        <div class="agreeIt"><span><label><input type="checkbox" checked="checked" id="agree"/><a href="/Home/TiaoKuan"  > 同意相关条款</a>               </label></span></div>
+        <div class="agreeIt"><span><label><input type="checkbox" checked="checked" id="agree"/><a href="/Home/EnTiaoKuan"  > i agree to the terms and conditions.</a>               </label></span></div>
     </div>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript">
         function agree() {
             if ($("#agree").attr("checked")) {
-                location.href = "/home/Gamebegin";
+                location.href = "/home/EnGamebegin";
             }
             else {
-                alert("请同意条款！");
+                alert("agree to the terms and conditions！");
             }
         }
 

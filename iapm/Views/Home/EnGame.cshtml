@@ -1,0 +1,117 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>Game</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body >
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3><a href="/home/EnIndex" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /><a href="/home/EnGameBegin"><img src="/images/back.png" /></a></h3>
+        </header>
+        <div style="position:relative; background:url(/images/bg5.jpg) no-repeat #fdf9e3 0 0px;background-size: 100% auto; height:100%; padding-left:30px"  >
+          <div style="width:200px;font-size:18px; margin-top:10px;float:left;">倒计时：<label id="seconds">10</label>秒</div>
+           
+                <div style="width:100px; float:right; font-size:30px; margin-top:10px;">@ViewBag.fee 分</div>
+            <div>
+                <img id="jb" src="~/images/jb.png" style="margin-top:100px;" />
+            </div>
+         
+        </div>
+       
+        <div class="bgFix">
+           
+              <img src="~/images/enp2.png" style="position:absolute;bottom:300px; left:0; right:0; width:60%;height:auto; margin:auto;z-index:900;"  />
+                <div style="position:absolute;bottom:200px; left:0; right:0; width:40%;height:auto;margin:auto;z-index:900;"><a href="/Home/EnPrize"><img src="~/images/enico32.png"></a></div>
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var t = setInterval("timedCount()", 1000);
+
+                            function timedCount() {
+           
+            $("#seconds").html($("#seconds").html() - 1);
+                                if ($("#seconds").html() == "0")
+            {
+                $(".bgFix").fadeIn();
+                $("#jb").attr("src", "/images/jb.png");
+                                    clearInterval(t);
+                                }
+                            }
+
+
+
+
+	//先判断设备是否支持HTML5摇一摇功能
+	if (window.DeviceMotionEvent) {
+	    //获取移动速度，得到device移动时相对之前某个时间的差值比
+	    window.addEventListener('devicemotion', deviceMotionHandler, false);
+	} else {
+
+        alert('您好，你目前所用的设备好像不支持重力感应哦！');
+                    }
+
+                    //设置临界值,这个值可根据自己的需求进行设定，默认就3000也差不多了
+                    var shakeThreshold = 500;
+                    //设置最后更新时间，用于对比
+                    var lastUpdate = 0;
+                    //设置位置速率
+                    var curShakeX = curShakeY = curShakeZ = lastShakeX = lastShakeY = lastShakeZ = 0;
+
+                    function deviceMotionHandler(event) {
+
+                        //获得重力加速
+                        var acceleration = event.accelerationIncludingGravity;
+
+                        //获得当前时间戳
+                        var curTime = new Date().getTime();
+
+                        if ((curTime - lastUpdate) > 100) {
+
+                            //时间差
+                            var diffTime = curTime - lastUpdate;
+                            lastUpdate = curTime;
+
+
+                            //x轴加速度
+                            curShakeX = acceleration.x;
+                            //y轴加速度
+                            curShakeY = acceleration.y;
+                            //z轴加速度
+                            curShakeZ = acceleration.z;
+
+                            var speed = Math.abs(curShakeX + curShakeY + curShakeZ - lastShakeX - lastShakeY - lastShakeZ) / diffTime * 10000;
+
+                            if (speed > shakeThreshold) {
+	            //TODO 相关方法，比如：
+
+	            //播放音效
+
+	            $("#jb").attr("src", "/images/a.gif");
+
+                            }
+                            else {
+	            $("#jb").attr("src", "/images/jb.png");
+                            }
+
+                            lastShakeX = curShakeX;
+                            lastShakeY = curShakeY;
+                            lastShakeZ = curShakeZ;
+                        }
+                    }
+    </script>
+</body>
+</html>
+
+

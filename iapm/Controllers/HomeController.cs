@@ -203,5 +203,148 @@ namespace iapm.Controllers
             return RedirectToAction("index");
           
         }
+
+        public ActionResult Ok()
+        {
+            LitJson.JsonData cardExt = new LitJson.JsonData();
+
+            cardExt["timestamp"] = Utils.Utils.ConvertDateTimeInt(DateTime.Now);
+
+            cardExt["nonce_str"] = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+
+            cardExt["signature"] = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            return View();
+        }
+
+        /*英文分割线*/
+        public ActionResult EnIndex()
+        {
+            return View();
+        }
+
+        public ActionResult EnTiaoKuan()
+        {
+            return View();
+        }
+
+
+        public ActionResult EnL1()
+        {
+            return View();
+        }
+        public ActionResult EnL2()
+        {
+            return View();
+        }
+        public ActionResult EnL3()
+        {
+            return View();
+        }
+        public ActionResult EnL4()
+        {
+            return View();
+        }
+        public ActionResult EnL5()
+        {
+            return View();
+        }
+
+        public ActionResult EnL6()
+        {
+            return View();
+        }
+
+        public ActionResult EnLG1()
+        {
+            return View();
+        }
+
+        public ActionResult EnLG2()
+        {
+            return View();
+        }
+
+        public ActionResult EnGameMap()
+        {
+            return View();
+        }
+
+        public ActionResult EnRule()
+        {
+            return View();
+        }
+
+        public ActionResult EnGameBegin()
+        {
+            return View();
+        }
+
+        public ActionResult EnGame()
+        {
+            //var ib = db.Ibeacons.Find(System.Web.HttpContext.Current.Session["ibeaconid"]);
+
+            var ib = db.Ibeacons.Find(1);
+
+            iapm.Models.ActiveGarden ac = new Models.ActiveGarden();
+            //ac.WechatUserId = int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString());
+            ac.WechatUserId = 1;
+
+            ac.Ibeaconid = ib.Ibeaconid;
+            ac.cdate = DateTime.Now;
+            Random rd = new Random();
+            ac.gardenFee = rd.Next(ib.minifen, ib.maxifen);
+            ac.gardenType = "普通";
+
+            List<Ibeacon> ibeas = db.Ibeacons.Where(i => i.dbtime <= DateTime.Now && i.dbtime >= DateTime.Now && i.Ibeaconid == ac.Ibeaconid).ToList();
+
+            if (ibeas.Count > 0)
+            {
+                List<ActiveGarden> ags = db.ActiveGardens.Where(a => a.ctime >= ibeas[0].dbtime && a.ctime <= ibeas[0].detime && a.Ibeaconid == ac.Ibeaconid).ToList();
+                if (ags.Count >= ibeas[0].dfen)
+                {
+                    ViewBag.doublefen = 0;
+                }
+                else
+                {
+                    ViewBag.doublefen = 1;
+                }
+            }
+
+
+            ViewBag.fee = ac.gardenFee;
+            try
+            {
+                db.ActiveGardens.Add(ac);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Utils.Log.Error("Game", ex.Message);
+
+            }
+
+            // var totalCount = db.ActiveGardens.SingleOrDefault(a=>a.ActiveGardenid== int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString())).
+
+            return View();
+        }
+
+
+        public ActionResult EnPrizeDetail(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Ticket ticket = db.Tickets.Find(id);
+            if (ticket == null)
+            {
+                return HttpNotFound();
+            }
+            return View(ticket);
+        }
+        public ActionResult EnPrize()
+        {
+            return View(db.Tickets.OrderByDescending(t => t.iconcount).ToList());
+        }
     }
 }
