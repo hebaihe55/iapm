@@ -275,6 +275,8 @@
     <Content Include="Global.asax" />
     <Content Include="images\140x140.gif" />
     <Content Include="images\170x170.gif" />
+    <Content Include="images\20160426212047615Wedgwood-1.jpg" />
+    <Content Include="images\20160426212307681Wedgwood-1.jpg" />
     <Content Include="images\a.gif" />
     <Content Include="images\astroboy-1.jpg" />
     <Content Include="images\astroboy-2.jpg" />
