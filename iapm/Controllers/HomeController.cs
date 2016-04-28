@@ -20,6 +20,10 @@ namespace iapm.Controllers
         {
             return View();
         }
+        public ActionResult NoIndex()
+        {
+            return View();
+        }
         public ActionResult Rule()
         {
             return View();
@@ -375,6 +379,8 @@ namespace iapm.Controllers
         }
         public ActionResult EnPrize()
         {
+            ViewBag.totalCount = db.ActiveGardens.Where(w => w.WechatUserId == 1).Select(s => s.gardenFee).Sum();
+
             return View(db.Tickets.OrderBy(t => t.flag).ToList());
         }
     }

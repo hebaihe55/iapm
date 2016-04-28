@@ -329,6 +329,7 @@
     <Content Include="images\ico1.png" />
     <Content Include="images\ico10.png" />
     <Content Include="images\ico11.png" />
+    <Content Include="images\ico111111.png" />
     <Content Include="images\ico12.png" />
     <Content Include="images\ico13.png" />
     <Content Include="images\ico14.png" />
@@ -1075,6 +1076,7 @@
     <Content Include="Views\Home\EnRule.cshtml" />
     <Content Include="Views\Home\EnGameBegin.cshtml" />
     <Content Include="Views\Home\EnGame.cshtml" />
+    <Content Include="Views\Home\NoIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
