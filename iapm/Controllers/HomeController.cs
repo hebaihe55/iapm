@@ -86,6 +86,10 @@ namespace iapm.Controllers
         }
         public ActionResult Prize()
         {
+
+         ViewBag.totalCount=   db.ActiveGardens.Where(w => w.WechatUserId == 1).Select(s => s.gardenFee).Sum();
+
+
             return View(db.Tickets.OrderBy(t=>t.flag).ToList());
         }
 
