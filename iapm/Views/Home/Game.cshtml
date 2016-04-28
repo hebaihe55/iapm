@@ -20,7 +20,7 @@
         <div style="position:relative; background:url(/images/bg5.jpg) no-repeat #fdf9e3 0 0px;background-size: 100% auto; height:100%; padding-left:30px"  >
           <div style="width:200px;font-size:18px; margin-top:10px;float:left;">倒计时：<label id="seconds">10</label>秒</div>
            
-                <div style="width:100px; float:right; font-size:30px; margin-top:10px;">@ViewBag.fee 分</div>
+                <div style="width:100px; float:right; font-size:30px; margin-top:10px;"><label id="jifen" style="display:none;">@ViewBag.fee</label>  分</div>
             <div>
                 <img id="jb" src="~/images/jb.png" style="margin-top:100px;" />
             </div>
@@ -46,6 +46,7 @@
             {
                 $(".bgFix").fadeIn();
                 $("#jb").attr("src", "/images/jb.png");
+                $("#jifen").show();
                                     clearInterval(t);
                                 }
                             }

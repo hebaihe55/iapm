@@ -90,7 +90,7 @@ namespace iapm.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Ticketid,title,entitle,quantity,iconcount,btime,etime,detailImg,detail,endetail")] Ticket ticket)
+        public ActionResult Edit([Bind(Include = "Ticketid,title,entitle,quantity,iconcount,btime,etime,detailImg,detail,endetail,flag")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {

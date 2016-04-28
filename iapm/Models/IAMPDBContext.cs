@@ -18,5 +18,6 @@ namespace iapm.Models
         public DbSet<WechatUser> WechatUsers { get; set; }
         public DbSet<ActiveGarden> ActiveGardens { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Card> Cards { get; set; }
     }
 }

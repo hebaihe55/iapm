@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using iapm.Models;
 using System.Configuration;
+using Newtonsoft.Json.Linq;
 
 namespace iapm.Controllers
 {
@@ -85,7 +86,7 @@ namespace iapm.Controllers
         }
         public ActionResult Prize()
         {
-            return View(db.Tickets.OrderByDescending(t=>t.iconcount).ToList());
+            return View(db.Tickets.OrderBy(t=>t.flag).ToList());
         }
 
 
@@ -148,6 +149,7 @@ namespace iapm.Controllers
         {
             Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+
             if (!string.IsNullOrWhiteSpace(code))
             {
                 Utils.WeHelper.code = code;
@@ -204,15 +206,40 @@ namespace iapm.Controllers
           
         }
 
-        public ActionResult Ok()
+        public ActionResult Ok(string id)
         {
-            LitJson.JsonData cardExt = new LitJson.JsonData();
 
-            cardExt["timestamp"] = Utils.Utils.ConvertDateTimeInt(DateTime.Now);
+            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+            ViewBag.card_id= Utils.WeHelper.card_id = id;
+            Utils.WeHelper.url = Request.Url.ToString();
 
-            cardExt["nonce_str"] = DateTime.Now.ToString("yyyyMMddHHmmssfff");
 
-            cardExt["signature"] = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+
+
+
+         
+            ViewBag.timestamp = Utils.WeHelper.timestamp= Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            ViewBag.nonceStr = Utils.WeHelper.noncestr= "iapm" +DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            ViewBag.signature = Utils.WeHelper.signature;
+
+            LitJson.JsonData o = new LitJson.JsonData();
+            o["timestamp"] = Utils.WeHelper.timestamp;
+            o["nonce_str"] = Utils.WeHelper.noncestr;
+            o["signature"] = Utils.WeHelper.kqsignature;
+
+            ViewBag.cardExt = o.ToJson();
+
+
+
+
+
+
+
+
+
+
+
             return View();
         }
 
@@ -344,7 +371,7 @@ namespace iapm.Controllers
         }
         public ActionResult EnPrize()
         {
-            return View(db.Tickets.OrderByDescending(t => t.iconcount).ToList());
+            return View(db.Tickets.OrderBy(t => t.flag).ToList());
         }
     }
 }

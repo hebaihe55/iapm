@@ -65,7 +65,6 @@ namespace iapm.Utils
                 Dictionary<string, string> dic = new Dictionary<string, string>();
                 dic.Add("timestamp", timestamp);
                 dic.Add("card_id", card_id);
-                dic.Add("card_id", card_id);
                 dic.Add("api_ticket", Kqticket);
                 dic.Add("nonce_str", noncestr);
                 var dicSort = from objDic in dic orderby objDic.Value  select objDic;

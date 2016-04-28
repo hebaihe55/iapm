@@ -11,6 +11,7 @@ namespace iapm.Controllers
 {
     public class WechatController : Controller
     {
+        private Models.IAMPDBContext db = new Models.IAMPDBContext();
         // GET: Wechat
         public ActionResult Index()
         {
@@ -79,7 +80,51 @@ namespace iapm.Controllers
 
             if (WPD.GetValue("Event").ToString() == "subscribe")
             {
-         
+                Response.Write("");
+                Response.End();
+            }
+
+            else if (WPD.GetValue("Event").ToString() == "user_get_card")
+            {
+                Models.Card card = new Models.Card();
+                card.OpenId = WPD.GetValue("FromUserName").ToString();
+                card.CardId = WPD.GetValue("CardId").ToString();
+                card.CardCode = WPD.GetValue("UserCardCode").ToString();
+                card.CardType = "领取";
+                card.CCtime = DateTime.Now;
+                db.Cards.Add(card);
+                db.SaveChanges();
+                Response.Write("");
+                Response.End();
+
+            }
+            else if (WPD.GetValue("Event").ToString() == "user_del_card")
+            {
+                Models.Card card = new Models.Card();
+                card.OpenId = WPD.GetValue("FromUserName").ToString();
+                card.CardId = WPD.GetValue("CardId").ToString();
+                card.CardCode = WPD.GetValue("UserCardCode").ToString();
+                card.CardType = "核销";
+                card.CCtime = DateTime.Now;
+                db.Cards.Add(card);
+                db.SaveChanges();
+                Response.Write("");
+                Response.End();
+
+            }
+            else if (WPD.GetValue("Event").ToString() == "user_consume_card")
+            {
+                Models.Card card = new Models.Card();
+                card.OpenId = WPD.GetValue("FromUserName").ToString();
+                card.CardId = WPD.GetValue("CardId").ToString();
+                card.CardCode = WPD.GetValue("UserCardCode").ToString();
+                card.CardType = "删除";
+                card.CCtime = DateTime.Now;
+                db.Cards.Add(card);
+                db.SaveChanges();
+                Response.Write("");
+                Response.End();
+
             }
             else
             {
@@ -94,7 +139,8 @@ namespace iapm.Controllers
 
             if (WPD.GetValue("Content").ToString() == "红包")
             {
-        
+                Response.Write("");
+                Response.End();
             }
             else
             {
@@ -104,6 +150,13 @@ namespace iapm.Controllers
 
 
         }
-
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }
