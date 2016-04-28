@@ -94,45 +94,45 @@ namespace iapm.Controllers
         {
             //var ib = db.Ibeacons.Find(System.Web.HttpContext.Current.Session["ibeaconid"]);
 
-            var ib = db.Ibeacons.Find(1);
+            //var ib = db.Ibeacons.Find(1);
 
-            iapm.Models.ActiveGarden ac = new Models.ActiveGarden();
-            //ac.WechatUserId = int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString());
-            ac.WechatUserId = 1;
+            //iapm.Models.ActiveGarden ac = new Models.ActiveGarden();
+            ////ac.WechatUserId = int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString());
+            //ac.WechatUserId = 1;
 
-            ac.Ibeaconid = ib.Ibeaconid;
-            ac.cdate = DateTime.Now;
-            Random rd = new Random();
-            ac.gardenFee = rd.Next(ib.minifen, ib.maxifen);
-            ac.gardenType = "普通";
+            //ac.Ibeaconid = ib.Ibeaconid;
+            //ac.cdate = DateTime.Now;
+            //Random rd = new Random();
+            //ac.gardenFee = rd.Next(ib.minifen, ib.maxifen);
+            //ac.gardenType = "普通";
 
-            List < Ibeacon > ibeas= db.Ibeacons.Where(i => i.dbtime <= DateTime.Now && i.dbtime >= DateTime.Now && i.Ibeaconid == ac.Ibeaconid).ToList();
+            //List < Ibeacon > ibeas= db.Ibeacons.Where(i => i.dbtime <= DateTime.Now && i.dbtime >= DateTime.Now && i.Ibeaconid == ac.Ibeaconid).ToList();
 
-            if (ibeas.Count > 0)
-            {
-              List<ActiveGarden> ags=  db.ActiveGardens.Where(a => a.ctime >= ibeas[0].dbtime && a.ctime <= ibeas[0].detime && a.Ibeaconid == ac.Ibeaconid).ToList();
-                if (ags.Count >= ibeas[0].dfen)
-                {
-                    ViewBag.doublefen = 0;
-                }
-                else
-                {
-                    ViewBag.doublefen = 1;
-                }
-            }
+            //if (ibeas.Count > 0)
+            //{
+            //  List<ActiveGarden> ags=  db.ActiveGardens.Where(a => a.ctime >= ibeas[0].dbtime && a.ctime <= ibeas[0].detime && a.Ibeaconid == ac.Ibeaconid).ToList();
+            //    if (ags.Count >= ibeas[0].dfen)
+            //    {
+            //        ViewBag.doublefen = 0;
+            //    }
+            //    else
+            //    {
+            //        ViewBag.doublefen = 1;
+            //    }
+            //}
 
 
-            ViewBag.fee = ac.gardenFee;
-            try
-            {
-                db.ActiveGardens.Add(ac);
-                db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                Utils.Log.Error("Game", ex.Message);
+            //ViewBag.fee = ac.gardenFee;
+            //try
+            //{
+            //    db.ActiveGardens.Add(ac);
+            //    db.SaveChanges();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utils.Log.Error("Game", ex.Message);
 
-            }
+            //}
 
             // var totalCount = db.ActiveGardens.SingleOrDefault(a=>a.ActiveGardenid== int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString())).
 
@@ -310,47 +310,47 @@ namespace iapm.Controllers
         {
             //var ib = db.Ibeacons.Find(System.Web.HttpContext.Current.Session["ibeaconid"]);
 
-            var ib = db.Ibeacons.Find(1);
+            //var ib = db.Ibeacons.Find(1);
 
-            iapm.Models.ActiveGarden ac = new Models.ActiveGarden();
-            //ac.WechatUserId = int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString());
-            ac.WechatUserId = 1;
+            //iapm.Models.ActiveGarden ac = new Models.ActiveGarden();
+            ////ac.WechatUserId = int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString());
+            //ac.WechatUserId = 1;
 
-            ac.Ibeaconid = ib.Ibeaconid;
-            ac.cdate = DateTime.Now;
-            Random rd = new Random();
-            ac.gardenFee = rd.Next(ib.minifen, ib.maxifen);
-            ac.gardenType = "普通";
+            //ac.Ibeaconid = ib.Ibeaconid;
+            //ac.cdate = DateTime.Now;
+            //Random rd = new Random();
+            //ac.gardenFee = rd.Next(ib.minifen, ib.maxifen);
+            //ac.gardenType = "普通";
 
-            List<Ibeacon> ibeas = db.Ibeacons.Where(i => i.dbtime <= DateTime.Now && i.dbtime >= DateTime.Now && i.Ibeaconid == ac.Ibeaconid).ToList();
+            //List<Ibeacon> ibeas = db.Ibeacons.Where(i => i.dbtime <= DateTime.Now && i.dbtime >= DateTime.Now && i.Ibeaconid == ac.Ibeaconid).ToList();
 
-            if (ibeas.Count > 0)
-            {
-                List<ActiveGarden> ags = db.ActiveGardens.Where(a => a.ctime >= ibeas[0].dbtime && a.ctime <= ibeas[0].detime && a.Ibeaconid == ac.Ibeaconid).ToList();
-                if (ags.Count >= ibeas[0].dfen)
-                {
-                    ViewBag.doublefen = 0;
-                }
-                else
-                {
-                    ViewBag.doublefen = 1;
-                }
-            }
+            //if (ibeas.Count > 0)
+            //{
+            //    List<ActiveGarden> ags = db.ActiveGardens.Where(a => a.ctime >= ibeas[0].dbtime && a.ctime <= ibeas[0].detime && a.Ibeaconid == ac.Ibeaconid).ToList();
+            //    if (ags.Count >= ibeas[0].dfen)
+            //    {
+            //        ViewBag.doublefen = 0;
+            //    }
+            //    else
+            //    {
+            //        ViewBag.doublefen = 1;
+            //    }
+            //}
 
 
-            ViewBag.fee = ac.gardenFee;
-            try
-            {
-                db.ActiveGardens.Add(ac);
-                db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                Utils.Log.Error("Game", ex.Message);
+            //ViewBag.fee = ac.gardenFee;
+            //try
+            //{
+            //    db.ActiveGardens.Add(ac);
+            //    db.SaveChanges();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utils.Log.Error("Game", ex.Message);
 
-            }
+            //}
 
-            // var totalCount = db.ActiveGardens.SingleOrDefault(a=>a.ActiveGardenid== int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString())).
+            //// var totalCount = db.ActiveGardens.SingleOrDefault(a=>a.ActiveGardenid== int.Parse(System.Web.HttpContext.Current.Session["uid"].ToString())).
 
             return View();
         }

@@ -79,7 +79,7 @@ ol li{
 
 /*故事开始*/
 .storyBegin{ margin:30px 15%;}
-.storyBegin img.word{ width:30%; margin-left:50px;}
+.storyBegin img.word{margin-left:50px;width:30%}
 .doMore{ text-align:center;}
 .doMore img{ width:29%;}
 .doMore a{ margin:0 1%;}
