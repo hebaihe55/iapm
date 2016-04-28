@@ -15,12 +15,12 @@
 <body >
     <div class="wrap">
         <header class="head clearfix">
-            <h3><a href="/home/Index" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /><a href="#"><img src="/images/back.png" /></a></h3>
+            <h3><a href="/home/Index" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /></h3>
         </header>
         <div style="position:relative; background:url(/images/bg5.jpg) no-repeat #fdf9e3 0 0px;background-size: 100% auto; height:100%; padding-left:30px"  >
           <div style="width:200px;font-size:18px; margin-top:10px;float:left;">倒计时：<label id="seconds">10</label>秒</div>
            
-                <div style="width:100px; float:right; font-size:30px; margin-top:10px;"><label id="jifen" style="display:none;">@ViewBag.fee</label>  分</div>
+                
             <div>
                 <img id="jb" src="~/images/jb.png" style="margin-top:100px;" />
             </div>
@@ -29,11 +29,9 @@
        
         <div class="bgFix">
            
-              <img src="~/images/p2.png" style="position:absolute;bottom:300px; left:0; right:0; width:60%;height:auto; margin:auto;z-index:900;"  />
-                <div style="position:absolute;bottom:200px; left:0; right:0; width:40%;height:auto;margin:auto;z-index:900;"><a href="/Home/Prize"><img src="/images/ico32.png"></a></div>
-
-
         </div>
+        <img src="~/images/p2.png" style="position:absolute;bottom:300px; left:0; right:0; width:60%;height:auto; margin:auto;z-index:4;display:none;"/>
+        <div style="position:absolute;bottom:200px; left:0; right:0; width:40%;height:auto;margin:auto;z-index:4;"><a href="/Home/Prize"><img src="/images/ico32.png" style="position:absolute;left:0;top:0;z-index:4"></a></div>
     </div>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript">
