@@ -32,7 +32,7 @@
         </div>
         <div class="doMore">
             <a href="javascript:void(0)" onclick="agree()"><img src="/images/ico111111.png"></a><br />
-            <a href="javascript:void(0)" onclick="agree2()"><img src="/images/ico17.png"></a><br/>
+            <a href="/home/Rulebake"><img src="/images/ico17.png"></a><br/>
             <a href="javascript:void(0)" onclick="agree()"><img src="~/images/ico333.png"></a><br />
             <a href="javascript:void(0)" onclick="agree()"><img src="/images/ico2222.png"></a>
         </div>
@@ -74,21 +74,7 @@
 
             })
         }
-        function agree2() {
-            if ($("#agree").attr("checked")) {
-                // alert("请到iapm商场开始游戏！")
-                location.href = "/home/Rulebake";
-
-            }
-            else {
-                // alert("请同意条款！");
-
-                $(".agreediv").show();
-                $(".backdiv").show();
-
-
-            }
-        }
+        
         $(".agreediv .sure").on("click", function () {
             $(".agreediv").hide();
             $(".backdiv").hide();
