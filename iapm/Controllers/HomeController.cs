@@ -20,31 +20,32 @@ namespace iapm.Controllers
 
 
          [HttpPost]
-        public int AddIcon(int id)
+        public string  AddIcon(int  bid,string uid)
         {
-          string uid=  System.Web.HttpContext.Current.Session["uid"].ToString()  ;
+          //  string uid = System.Web.HttpContext.Current.Session["uid"].ToString();
 
-          string bid= System.Web.HttpContext.Current.Session["bid"].ToString();
+          //  string bid = System.Web.HttpContext.Current.Session["bid"].ToString();
 
             Models.ActiveGarden ag = new ActiveGarden();
             ag.OpenId = uid;
-            ag.Ibeaconid =int.Parse( bid);
+            ag.Ibeaconid = bid;
             ag.gardenFee = 1;
             ag.gardenType = "分享";
             ag.cdate = DateTime.Now;
             ag.ctime = DateTime.Now;
 
-           int i= db.ActiveGardens.Where(t => t.OpenId == ag.OpenId && t.cdate == ag.cdate && t.gardenType=="分享").Count();
+          
+            int i = db.ActiveGardens.Where(t => t.OpenId == ag.OpenId && t.cdate == ag.cdate && t.gardenType == "分享").Count();
 
             if (i == 0)
             {
                 db.ActiveGardens.Add(ag);
                 db.SaveChanges();
 
-                return 1;
+                return "1";
             }
 
-            return 0;
+            return "0";
         }
 
         public ActionResult EnNoIndex()
@@ -432,6 +433,9 @@ namespace iapm.Controllers
             //获取用户id
             ac.OpenId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
+            ViewBag.uid = ac.OpenId;
+
+            ViewBag.bid = ibeacon.Ibeaconid;
 
             ac.Ibeaconid = ibeacon.Ibeaconid;
             ac.ctime = ac.cdate = DateTime.Now;
