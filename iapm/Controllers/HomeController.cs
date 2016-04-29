@@ -131,6 +131,16 @@ namespace iapm.Controllers
             return View();
         }
 
+
+        public ActionResult TiaoKuanBake()
+        {
+            return View();
+        }
+        public ActionResult EnTiaoKuanBake()
+        {
+            return View();
+        }
+
         public ActionResult LG1()
         {
 
