@@ -28,8 +28,7 @@ namespace iapm.Models
         [StringLength(500)]
         public string headimgurl { get; set; }
         public int Ibeaconid { get; set; }
-        [ForeignKey("Ibeaconid")]
-        public virtual Ibeacon Ibeacon { get; set; }
+    
 
 
 
