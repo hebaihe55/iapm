@@ -24,7 +24,7 @@ namespace iapm.Controllers
         {
           string uid=  System.Web.HttpContext.Current.Session["uid"].ToString()  ;
 
-          string bid= System.Web.HttpContext.Current.Session["uid"].ToString();
+          string bid= System.Web.HttpContext.Current.Session["bid"].ToString();
 
             Models.ActiveGarden ag = new ActiveGarden();
             ag.OpenId = uid;
