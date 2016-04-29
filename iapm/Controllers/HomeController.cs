@@ -631,11 +631,9 @@ namespace iapm.Controllers
 
         }
 
-        public ActionResult Ok(string id)
+
+        public int CheckIcon(string id)
         {
-
-
-
             string openId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
 
@@ -644,14 +642,25 @@ namespace iapm.Controllers
             int iconTotal = db.ActiveGardens.Where(w => w.OpenId == openId).Sum(s => (int?)s.gardenFee).GetValueOrDefault(0);
 
             //已经使用的积分
-            int iconUsed = db.Cards.Where(t => t.OpenId == openId && t.CardType== "领取").Sum(s => (int?)s.CardFee).GetValueOrDefault(0);
+            int iconUsed = db.Cards.Where(t => t.OpenId == openId && t.CardType == "领取").Sum(s => (int?)s.CardFee).GetValueOrDefault(0);
 
             //卡券积分
             int iconKQ = db.Tickets.Where(t => t.card_id == id).Sum(s => s.iconcount);
-            if (iconTotal- iconUsed < iconKQ)
+            if (iconTotal - iconUsed < iconKQ)
             {
-                return RedirectToAction("Short");
+                return 0;
             }
+
+            return 1;
+        }
+
+
+        public ActionResult Ok(string id)
+        {
+
+
+
+            
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
