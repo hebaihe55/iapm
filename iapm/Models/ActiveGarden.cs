@@ -11,9 +11,9 @@ namespace iapm.Models
    public class ActiveGarden
     {
         public int ActiveGardenid { get; set; }
-        public int WechatUserId { get; set; }
+        public string  OpenId { get; set; }
         public int Ibeaconid { get; set; }
-        public int gardenFee { get; set; }
+        public int? gardenFee { get; set; }
 
         public string  gardenType { get; set; }
         public DateTime cdate { get; set; }

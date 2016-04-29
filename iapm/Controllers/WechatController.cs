@@ -91,6 +91,7 @@ namespace iapm.Controllers
                 card.CardId = WPD.GetValue("CardId").ToString();
                 card.CardCode = WPD.GetValue("UserCardCode").ToString();
                 card.CardType = "领取";
+                card.CardFee = GetCardFee(WPD.GetValue("CardId").ToString());
                 card.CCtime = DateTime.Now;
                 db.Cards.Add(card);
                 db.SaveChanges();
@@ -105,6 +106,7 @@ namespace iapm.Controllers
                 card.CardId = WPD.GetValue("CardId").ToString();
                 card.CardCode = WPD.GetValue("UserCardCode").ToString();
                 card.CardType = "核销";
+                card.CardFee=GetCardFee(WPD.GetValue("CardId").ToString());
                 card.CCtime = DateTime.Now;
                 db.Cards.Add(card);
                 db.SaveChanges();
@@ -119,6 +121,7 @@ namespace iapm.Controllers
                 card.CardId = WPD.GetValue("CardId").ToString();
                 card.CardCode = WPD.GetValue("UserCardCode").ToString();
                 card.CardType = "删除";
+                card.CardFee = GetCardFee(WPD.GetValue("CardId").ToString());
                 card.CCtime = DateTime.Now;
                 db.Cards.Add(card);
                 db.SaveChanges();
@@ -133,6 +136,15 @@ namespace iapm.Controllers
             }
         }
         //处理文本
+
+
+        private int GetCardFee(string ticketid)
+        {
+          var tick=  db.Tickets.Where(w => w.card_id == "ticket").SingleOrDefault();
+            return tick.iconcount;
+        }
+
+
         private void DowithText(Utils.WxPayData WPD)
         {
             

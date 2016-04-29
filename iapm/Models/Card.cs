@@ -17,7 +17,8 @@ namespace iapm.Models
         public string CardCode{ get; set; }
         [StringLength(50)]
         public string CardType { get; set; }
-      
+     
+        public int? CardFee { get; set; }
         public DateTime CCtime { get; set; }
     }
 }
