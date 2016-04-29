@@ -956,10 +956,6 @@ namespace iapm.Controllers
             Utils.WeHelper.url = Request.Url.ToString();
 
 
-
-
-
-
             ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
             ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
             ViewBag.signature = Utils.WeHelper.signature;
