@@ -366,6 +366,8 @@
     <Content Include="images\ico9.png" />
     <Content Include="images\img1.jpg" />
     <Content Include="images\jb.png" />
+    <Content Include="images\jfbg.png" />
+    <Content Include="images\jifenbugou.png" />
     <Content Include="images\kabb-1.jpg" />
     <Content Include="images\Kabb-2.jpg" />
     <Content Include="images\l1.gif" />
@@ -1085,6 +1087,7 @@
     <Content Include="Views\Home\EnGameBegin.cshtml" />
     <Content Include="Views\Home\EnGame.cshtml" />
     <Content Include="Views\Home\NoIndex.cshtml" />
+    <Content Include="Views\Home\Short.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
