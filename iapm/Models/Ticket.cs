@@ -58,6 +58,48 @@ namespace iapm.Models
 
 
         public int flag { get; set; }
+      
+
+    }
+    public class VTicket
+    {
+        public int Ticketid { get; set; }
+
+
+
+   
+        public string title { get; set; }
+     
+        public string entitle { get; set; }
+     
+        public int quantity { get; set; }
+
+    
+        public int iconcount { get; set; }
+
+
+
+  
+        public DateTime btime { get; set; }
+       
+        public DateTime etime { get; set; }
+
+
+
+    
+        public string detailImg { get; set; }
+     
+        public string detail { get; set; }
+     
+        public string endetail { get; set; }
+
+        public string card_id { get; set; }
+
+        public DateTime ctime { get; set; }
+
+
+        public int flag { get; set; }
+        public int kqleft { get; set; }
 
     }
 }

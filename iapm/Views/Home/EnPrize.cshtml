@@ -1,4 +1,4 @@
-﻿@model IEnumerable<iapm.Models.Ticket>
+﻿@model IEnumerable<iapm.Models.VTicket>
 @{
     Layout = null;
 }
@@ -20,6 +20,7 @@
         <header class="head clearfix">
             <h3><a href="/home/EnIndex" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /><a href="/home/Engame"><img src="/images/back.png" /></a></h3>
         </header>
+        <h6>Cumulative：@ViewBag.totalCount</h6>
         <div class="prize">
             
             <h3><img src="/images/enico21.png" /><br />Limited quota while stocks last, first-come-first-served basis<br /> The redeemed gift(s) or coupon(s) cannot be returned.
@@ -41,8 +42,8 @@
                   
                     </div>
                     <div class="number">
-                        <span>amount:@Html.DisplayFor(modelItem => item.quantity)/Remain:0</span>
-                        <p><img src="/images/enico27.png"></p>
+                        <span>amount:@Html.DisplayFor(modelItem => item.quantity)/Remain:@item.kqleft</span>
+                        <p><a href="/home/ok/@item.card_id"><img src="/images/enico27.png"></a></p>
                     </div>
                 </li>
             
