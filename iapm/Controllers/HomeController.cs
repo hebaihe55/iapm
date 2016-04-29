@@ -20,29 +20,37 @@ namespace iapm.Controllers
 
 
          [HttpPost]
-        public string  AddIcon(int id)
+        public int add(Models.ActiveGarden ag)
         {
-            //  string uid = System.Web.HttpContext.Current.Session["uid"].ToString();
 
-            //  string bid = System.Web.HttpContext.Current.Session["bid"].ToString();
-            //Models.ActiveGarden ag = new ActiveGarden();
-            //ag.OpenId = "oXXgKjy0gDLYvPrCA9tqhQAFFl7w";
-            //ag.Ibeaconid = 12;
-            //ag.gardenFee = 1;
-            //ag.gardenType = "分享";
-            //ag.cdate = DateTime.Now;
-            //ag.ctime = DateTime.Now;
+            ag.OpenId = "oXXgKjy0gDLYvPrCA9tqhQAFFl7w";
+            ag.Ibeaconid = 12;
+            ag.gardenFee = 1;
+            ag.gardenType = "分享";
+            ag.cdate = DateTime.Now;
+            ag.ctime = DateTime.Now;
 
 
             // int i = db.ActiveGardens.Where(t => t.OpenId == ag.OpenId && t.cdate == ag.cdate && t.gardenType == "分享").Count();
 
-            //db.ActiveGardens.Add(ag);
-            //db.SaveChanges();
+            try
+            {
+                db.ActiveGardens.Add(ag);
+                int i = db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
 
-           
-             
+                Utils.Log.Error("AddIcon", ex.Message);
 
-                return "1";
+                return -1;
+            }
+            return 0;
+
+
+
+
+          
          
 
           
@@ -241,10 +249,16 @@ namespace iapm.Controllers
 
 
 
-        public ActionResult rulebake()
+        public ActionResult Rulebake()
         {
             return View();
         }
+
+        public ActionResult EnRulebake()
+        {
+            return View();
+        }
+
 
 
 
