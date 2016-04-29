@@ -2,16 +2,133 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
 
+<!doctype html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>首页</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+
 </head>
-<body>
-    <div>
-    
+
+<body class="bg4">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3><img src="/images/logo.png" /></h3>
+        </header>
+        <!--兑换券-->
+        <p style="text-align:right;width:90%; margin-top:5px;"><a href="/home/index">中文</a> |<a href="/home/Enindex">ENGLISH</a> </p>
+        <div class="storyBegin">
+            <p><img src="/images/enico15.png"></p>
+            <div style="height:153px"></div>
+        </div>
+        <div class="doMore">
+            <a href="javascript:void(0)" onclick="agree()"><img src="~/images/enico111111.png"></a><br />
+            <a href="/home/Enrule"><img src="/images/enico17.png"></a><br />
+            <a href="/home/Engamemap"><img src="/images/enico18.png"></a><br />
+            <a href="javascript:void(0)" onclick="agree()"><img src="~/images/enico222.png"></a>
+        </div>
+        <div class="agreediv">
+            <p>Agree Terms and Conditions</p>
+            <input type="button" value="sure" class="sure" />
+
+        </div>
+        <div class="agreediv2">
+            <p>please visit us at iapm mall for the game!</p>
+            <input type="button" value="sure" class="sure" />
+
+        </div>
+        <div class="agreeIt"><span><label><input type="checkbox" id="agree" /><a href="/Home/EnTiaoKuan">Agree Terms and Conditions</a> </label></span></div>
     </div>
+    <div class="backdiv"></div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        function agree() {
+            if ($("#agree").attr("checked")) {
+                // alert("请到iapm商场开始游戏！")
+
+                    $(".agreediv2").show();
+                    $(".backdiv").show();
+
+            }
+            else {
+               // alert("请同意条款！");
+
+                   $(".agreediv").show();
+                    $(".backdiv").show();
+
+
+            }
+            $(".agreediv .sure").on("click", function () {
+                $(".agreediv").hide();
+                $(".backdiv").hide();
+
+            })
+            $(".agreediv2 .sure").on("click", function () {
+                $(".agreediv2").hide();
+                $(".backdiv").hide();
+
+            })
+        }
+
+    </script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: "@ViewBag.appId", // 必填，公众号的唯一标识
+            timestamp: "@ViewBag.timestamp", // 必填，生成签名的时间戳
+            nonceStr: "@ViewBag.nonceStr", // 必填，生成签名的随机串
+            signature: "@ViewBag.signature",// 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'hideAllNonBaseMenuItem'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+        wx.error(function (res) {
+            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+        });
+        wx.ready(function () {
+            // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+
+
+            wx.onMenuShareTimeline({
+                title: 'iapm“shake and win”reward！', // 分享标题
+                link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
+                imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+
+            wx.onMenuShareAppMessage({
+                title: 'iapm“shake and win”reward！！', // 分享标题
+                desc: 'Icome and join us！', // 分享描述
+                link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
+                imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+
+
+
+
+
+        });
+
+    </script>
 </body>
 </html>
+
