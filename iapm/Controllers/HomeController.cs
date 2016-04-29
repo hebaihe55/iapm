@@ -19,8 +19,8 @@ namespace iapm.Controllers
 
 
 
-            [HttpPost]
-        public int AddIcon(int? id)
+         [HttpPost]
+        public int AddIcon(int id)
         {
           string uid=  System.Web.HttpContext.Current.Session["uid"].ToString()  ;
 
@@ -34,11 +34,12 @@ namespace iapm.Controllers
             ag.cdate = DateTime.Now;
             ag.ctime = DateTime.Now;
 
-           int i= db.ActiveGardens.Where(t => t.OpenId == ag.OpenId && t.cdate == DateTime.Now.Date && t.gardenType=="分享").Count();
+           int i= db.ActiveGardens.Where(t => t.OpenId == ag.OpenId && t.cdate == ag.cdate && t.gardenType=="分享").Count();
 
             if (i == 0)
             {
                 db.ActiveGardens.Add(ag);
+                db.SaveChanges();
 
                 return 1;
             }
