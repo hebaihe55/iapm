@@ -710,10 +710,12 @@ namespace iapm.Controllers
 
             //卡券积分
             int iconKQ = db.Tickets.Where(t => t.card_id == id).Sum(s => s.iconcount);
-            if (iconTotal - iconUsed > iconKQ)
+            if (iconTotal - iconUsed < iconKQ)
             {
                 RedirectToAction("BuGou");
             }
+
+
 
 
 
