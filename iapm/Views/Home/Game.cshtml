@@ -35,10 +35,7 @@
         <div style="position:absolute;bottom:330px; left:0; right:0; width:50%;height:auto;margin:auto;z-index:5;display:none;text-align:center;" class="mark">@if (@ViewBag.fee == 0) { <span style = "font-size:16px;color:red; "> 该点位已摇过，<br />请至其它点位摇奖！</span > }
         else {  <span style = "font-size:20px;color:red; margin-top:5px" >赢得: @ViewBag.fee 枚金币</span >}</div>
 
-        <form action="/Home/AddIcon" method="post" style="display:none;">
-            <input type="tel" id="id" />
-            <input type="submit" id="sbb" />
-        </form>
+    
 
 
 </div>
@@ -157,8 +154,8 @@ var t = setInterval("timedCount()", 1000);
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
                 success: function () {
-                   
-                    $("#sbb").submit();
+                    $.post("/Home/AddIcon",{bid:@ViewBag.bid ,uid:@ViewBag.uid }, function (data, status) {});
+
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
@@ -175,16 +172,18 @@ var t = setInterval("timedCount()", 1000);
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                 success: function () {
                     // 用户确认分享后执行的回调函数
-                   
 
-                   
+                    $.post("/Home/AddIcon", { id: 2,uid:2 }, function (data, status) {
+
+                    });
+
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
                 }
             });
-            
-        
+
+
 
 
 
