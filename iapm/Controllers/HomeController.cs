@@ -457,20 +457,25 @@ namespace iapm.Controllers
             //获取用户id
             ac.OpenId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
-            ViewBag.uid = ac.OpenId;
-
-            ViewBag.bid = ibeacon.Ibeaconid;
 
             ac.Ibeaconid = ibeacon.Ibeaconid;
             ac.ctime = ac.cdate = DateTime.Now;
 
             Random rd = new Random();
 
+            int minj = 0;
+            int maxj = 0;
+
             //在双倍积分时间内积分 * 2
             if (DateTime.Now >= ibeacon.dbtime && DateTime.Now <= ibeacon.detime)
             {
-                ibeacon.maxifen *= 2;
-                ibeacon.minifen *= 2;
+                maxj = ibeacon.maxifen * 2;
+                minj = ibeacon.minifen * 2;
+            }
+            else
+            {
+                maxj = ibeacon.maxifen;
+                minj = ibeacon.minifen;
             }
 
             ac.gardenFee = rd.Next(ibeacon.minifen, ibeacon.maxifen);
@@ -508,7 +513,7 @@ namespace iapm.Controllers
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-           
+
             Utils.WeHelper.url = Request.Url.ToString();
 
 
@@ -864,15 +869,12 @@ namespace iapm.Controllers
 
             Utils.WeHelper.url = Request.Url.ToString();
 
-
-
-
-
-
             ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
             ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
             ViewBag.signature = Utils.WeHelper.signature;
             return View();
+
+
         }
 
         public ActionResult EnGameBegin()
@@ -910,11 +912,19 @@ namespace iapm.Controllers
 
             Random rd = new Random();
 
+            int minj = 0;
+            int maxj = 0;
+
             //在双倍积分时间内积分 * 2
             if (DateTime.Now >= ibeacon.dbtime && DateTime.Now <= ibeacon.detime)
             {
-                ibeacon.maxifen *= 2;
-                ibeacon.minifen *= 2;
+                maxj = ibeacon.maxifen * 2;
+                minj = ibeacon.minifen * 2;
+            }
+            else
+            {
+                maxj = ibeacon.maxifen;
+                minj = ibeacon.minifen;
             }
 
             ac.gardenFee = rd.Next(ibeacon.minifen, ibeacon.maxifen);
@@ -1054,6 +1064,16 @@ namespace iapm.Controllers
             ViewBag.signature = Utils.WeHelper.signature;
 
             return View(q.OrderBy(o => o.flag).ToList());
+        }
+
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
 
     }
