@@ -27,8 +27,8 @@ namespace iapm.Models
         public string country { get; set; }
         [StringLength(500)]
         public string headimgurl { get; set; }
-        public int Ibeaconid { get; set; }
-    
+        public DateTime  ctime { get; set; }
+
 
 
 
