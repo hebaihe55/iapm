@@ -23,10 +23,7 @@ namespace iapm.Controllers
         public int add(Models.ActiveGarden ag)
         {
 
-            ag.OpenId = "oXXgKjy0gDLYvPrCA9tqhQAFFl7w";
-            ag.Ibeaconid = 12;
-            ag.gardenFee = 1;
-            ag.gardenType = "分享";
+        
             ag.cdate = DateTime.Now;
             ag.ctime = DateTime.Now;
 
