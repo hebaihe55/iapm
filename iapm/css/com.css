@@ -80,9 +80,9 @@ ol li{
 /*故事开始*/
 .storyBegin{ margin:0 15%;}
 .storyBegin img.word{margin-left:50px;width:30%}
-.doMore{ text-align:center;}
+.doMore{ text-align:left;}
 .doMore img{ width:29%;}
-.doMore a{ margin:0 1%;}
+.doMore a{ margin:0 15%;}
 .agreeIt{ text-align:center; line-height:40px; margin-top:30px;}
 .agreeIt span{ background:url(../images/ico20.png); font-size:14px; padding:0 10px; color:#7f6d59; display:inline-block;}
 .agreeIt input{ margin-right:5px; padding:3px; vertical-align:middle;}
