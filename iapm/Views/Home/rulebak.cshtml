@@ -2,86 +2,32 @@
     Layout = null;
 }
 
-
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <title>首页</title>
+    <title>游戏</title>
     <link href="/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="/css/com.css" rel="stylesheet" type="text/css" />
     <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
-  
+    <title>规则</title>
 </head>
 
-<body class="bg4">
+<body class="bg6">
     <div class="wrap">
         <header class="head clearfix">
             <h3><img src="/images/logo.png" /></h3>
         </header>
-        <!--兑换券-->
 
-
-
-        <p style="text-align:right;width:90%; margin-top:5px;"><a href="/home/index">中文</a> |<a href="/home/enindex">ENGLISH</a> </p>
-        <div class="storyBegin">
-            
-            <p><img class="word" src="/images/ico15.png"></p>
-         <div style="height:122px"></div>
-        </div>
-
-
-        <div class="doMore">
-            <a href="javascript:void(0)" onclick="agree()"><img src="/images/ico111111.png"></a><br />
-            <a href="/home/rulebak"><img src="/images/ico17.png"></a><br/>
-            <a href="javascript:void(0)" onclick="agree()"><img src="~/images/ico333.png"></a><br />
-            <a href="javascript:void(0)" onclick="agree()"><img src="/images/ico2222.png"></a>
-        </div>
-        <div class="agreediv">
-            <p>请同意条款!</p>
-            <input type="button" value="确定" class="sure" />
+        <div class="gameInfo">
+            <p>1、游戏开始,摇动手机，赢取金币。</p>
+            <p>3、每人每天在每个点位仅可以参加一次<br />“摇金币 赢奖赏”。</p>
+            <p>4、每次活动结束还有一次惊喜，<br />有机会让你的金币翻倍哦！</p>
+            <p>5、邀请更多好友来参加吧!有机会额外获更多金币。</p>
 
         </div>
-        <div class="agreediv2">
-            <p>请到iapm商场开始游戏！!</p>
-            <input type="button" value="确定" class="sure" />
-
-        </div>
-        <div class="agreeIt"><span><label><input type="checkbox" id="agree"/><a href="/Home/TiaoKuan"  > 同意相关条款</a></label></span></div>
     </div>
-    <div class="backdiv"></div>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript">
-        function agree() {
-            if ($("#agree").attr("checked")) {
-                // alert("请到iapm商场开始游戏！")
-                
-                    $(".agreediv2").show();
-                    $(".backdiv").show();
-
-            }
-            else {
-               // alert("请同意条款！");
-               
-                   $(".agreediv").show();
-                    $(".backdiv").show();
-
-             
-            }
-            $(".agreediv .sure").on("click", function () {
-                $(".agreediv").hide();
-                $(".backdiv").hide();
-
-            })
-            $(".agreediv2 .sure").on("click", function () {
-                $(".agreediv2").hide();
-                $(".backdiv").hide();
-
-            })
-        }
-
-    </script>
     <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
         wx.config({
@@ -97,7 +43,6 @@
         });
         wx.ready(function () {
             // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-
 
             wx.onMenuShareTimeline({
                 title: 'iapm摇金币 赢奖赏 等你来参加！', // 分享标题
@@ -126,7 +71,7 @@
                     // 用户取消分享后执行的回调函数
                 }
             });
-          
+
 
 
 
@@ -137,4 +82,3 @@
     </script>
 </body>
 </html>
-
