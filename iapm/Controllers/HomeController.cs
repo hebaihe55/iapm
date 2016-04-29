@@ -86,6 +86,11 @@ namespace iapm.Controllers
             {
                 return HttpNotFound();
             }
+
+            int pleft = ticket.quantity - db.Cards.Where(w => w.CardId == ticket.card_id).Count();
+
+            ViewBag.pleft = pleft;
+
             return View(ticket);
         }
 
@@ -100,12 +105,12 @@ namespace iapm.Controllers
             int iconTotal = db.ActiveGardens.Where(w => w.OpenId == openId).Sum(s => (int?)s.gardenFee).GetValueOrDefault(0);
 
             //已经使用的积分
-             int iconUsed = db.Cards.Where(t => t.OpenId == openId).Sum(s=>(int?)s.CardFee).GetValueOrDefault();
+             int iconUsed = db.Cards.Where(t => t.OpenId == openId && t.CardType == "领取").Sum(s=>(int?)s.CardFee).GetValueOrDefault();
 
             ViewBag.totalCount = iconTotal- iconUsed;
 
             var q = from t in db.Tickets
-                    join c in db.Cards on
+                    join c in db.Cards.Where(t=>t.CardType=="领取") on
                     t.card_id equals c.CardId
                     into cards
                     select new VTicket
@@ -291,7 +296,7 @@ namespace iapm.Controllers
             int iconTotal = db.ActiveGardens.Where(w => w.OpenId == openId).Sum(s => (int?)s.gardenFee).GetValueOrDefault(0);
 
             //已经使用的积分
-            int iconUsed = db.Cards.Where(t => t.OpenId == openId).Sum(s => (int?)s.CardFee).GetValueOrDefault(0);
+            int iconUsed = db.Cards.Where(t => t.OpenId == openId && t.CardType== "领取").Sum(s => (int?)s.CardFee).GetValueOrDefault(0);
 
             //卡券积分
             int iconKQ = db.Tickets.Where(t => t.card_id == id).Sum(s => s.iconcount);
@@ -469,6 +474,10 @@ namespace iapm.Controllers
             {
                 return HttpNotFound();
             }
+            int pleft = ticket.quantity - db.Cards.Where(w => w.CardId == ticket.card_id).Count();
+
+            ViewBag.pleft = pleft;
+
             return View(ticket);
         }
     
@@ -481,13 +490,13 @@ namespace iapm.Controllers
             int iconTotal = db.ActiveGardens.Where(w => w.OpenId == openId).Sum(s => (int?)s.gardenFee).GetValueOrDefault(0);
 
             //已经使用的积分
-            int iconUsed = db.Cards.Where(t => t.OpenId == openId).Sum(s => (int?)s.CardFee).GetValueOrDefault();
+            int iconUsed = db.Cards.Where(t => t.OpenId == openId && t.CardType == "领取").Sum(s => (int?)s.CardFee).GetValueOrDefault();
 
             ViewBag.totalCount = iconTotal - iconUsed;
 
             var q = from t in db.Tickets
-                    join c in db.Cards on
-                    t.card_id equals c.CardId
+                    join c in db.Cards.Where(t => t.CardType == "领取") on
+                   t.card_id equals c.CardId
                     into cards
                     select new VTicket
                     {
