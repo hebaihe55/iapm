@@ -156,7 +156,8 @@ var t = setInterval("timedCount()", 1000);
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
 
                 success: function () {
-             
+                    $.post("/Home/add", { OpenId: '@ViewBag.uid', Ibeaconid: '@ViewBag.bid', gardenFee: 1, gardenType: '分享' }, function (data, status) { });
+
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
@@ -174,7 +175,7 @@ var t = setInterval("timedCount()", 1000);
                 success: function () {
                     // 用户确认分享后执行的回调函数
                 
-                    $.post("/Home/add",{OpenId:'@ViewBag.uid',Ibeaconid:'@ViewBag.bid',gardenFee:1,gardenType:'分享' }, function (data, status) {alert(data+status)  });
+                    $.post("/Home/add",{OpenId:'@ViewBag.uid',Ibeaconid:'@ViewBag.bid',gardenFee:1,gardenType:'分享' }, function (data, status) { });
 
 
                 },
