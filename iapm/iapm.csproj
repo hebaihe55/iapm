@@ -361,6 +361,7 @@
     <Content Include="images\ico31.png" />
     <Content Include="images\ico32.png" />
     <Content Include="images\ico33.png" />
+    <Content Include="images\ico333.png" />
     <Content Include="images\ico4.png" />
     <Content Include="images\ico5.png" />
     <Content Include="images\ico6.png" />
@@ -1092,6 +1093,8 @@
     <Content Include="Views\Home\NoIndex.cshtml" />
     <Content Include="Views\Home\Short.cshtml" />
     <Content Include="Views\Home\EnNoIndex.cshtml" />
+    <Content Include="Views\Home\rulebak.cshtml" />
+    <Content Include="Views\Home\Enrulebak.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
