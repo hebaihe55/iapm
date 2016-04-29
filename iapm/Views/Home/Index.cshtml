@@ -35,8 +35,15 @@
             <a href="/home/gamemap"><img src="/images/ico18.png"></a><br />
             <a href="/home/prize"><img src="/images/ico17-1.png"></a>
         </div>
+        <div class="agreediv">
+            <p>请同意条款!</p>
+            <span class="sure">确定</span>
+
+        </div>
         <div class="agreeIt"><span><label><input type="checkbox" id="agree"/><a href="/Home/TiaoKuan"  > 同意相关条款</a></label></span></div>
+        
     </div>
+    <div class="backdiv"></div>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript">
         function agree() {
@@ -44,8 +51,15 @@
                 location.href = "/home/Gamebegin";
             }
             else {
-                alert("请同意条款！");
+                alert("1111");
+                $(".backdiv").show();
+                $(".agreediv").show();
             }
+            $(".agreediv .sure").on("click", function () {
+                $(".agreediv").hide();
+                $(".backdiv").hide();
+
+            })
         }
 
     </script>
