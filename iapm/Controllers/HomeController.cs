@@ -457,8 +457,12 @@ namespace iapm.Controllers
             //获取用户id
             ac.OpenId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
+            ViewBag.uid = ac.OpenId;
 
             ac.Ibeaconid = ibeacon.Ibeaconid;
+
+            ViewBag.bid = ac.Ibeaconid;
+
             ac.ctime = ac.cdate = DateTime.Now;
 
             Random rd = new Random();
@@ -478,7 +482,7 @@ namespace iapm.Controllers
                 minj = ibeacon.minifen;
             }
 
-            ac.gardenFee = rd.Next(ibeacon.minifen, ibeacon.maxifen);
+            ac.gardenFee = rd.Next(minj, minj);
 
             ac.gardenType = "普通";
 
@@ -529,6 +533,7 @@ namespace iapm.Controllers
         }
 
 
+
         public ActionResult Subscribe(int id)
         {
             System.Web.HttpContext.Current.Session["bid"] = id;
@@ -551,8 +556,8 @@ namespace iapm.Controllers
                 //string strjson = "{\"openid\":\"oQOyyv - MdUWSgP8_Smoh2S_6 - 1I0\",\"nickname\":\"白鹤\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"长宁\",\"province\":\"上海\",\"country\":\"中国\",\"headimgurl\":\"http://wx.qlogo.cn/mmopen/78EkX665csCmkBmDBDSYTDCmZdvlMDqCX7wYTLcHeeKNeLicSS5ic2fDAYpeTqicaqhF8Iw9Rp9d6hegynMHC7tPMWLRnqMvNicn/0\",\"privilege\":[]}";
                 Utils.Log.Info("userin", strjson);
                 Models.WechatUser jd = LitJson.JsonMapper.ToObject<Models.WechatUser>(strjson);
-                jd.Ibeaconid = int.Parse(System.Web.HttpContext.Current.Session["bid"].ToString());
-
+                //jd.Ibeaconid = int.Parse(System.Web.HttpContext.Current.Session["bid"].ToString());
+                jd.ctime = DateTime.Now;
 
 
 
@@ -906,8 +911,12 @@ namespace iapm.Controllers
             //获取用户id
             ac.OpenId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
+            ViewBag.uid = ac.OpenId;
 
             ac.Ibeaconid = ibeacon.Ibeaconid;
+
+            ViewBag.bid = ac.Ibeaconid;
+
             ac.ctime = ac.cdate = DateTime.Now;
 
             Random rd = new Random();
@@ -927,7 +936,7 @@ namespace iapm.Controllers
                 minj = ibeacon.minifen;
             }
 
-            ac.gardenFee = rd.Next(ibeacon.minifen, ibeacon.maxifen);
+            ac.gardenFee = rd.Next(minj, minj);
 
             ac.gardenType = "普通";
 
