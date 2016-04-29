@@ -24,7 +24,7 @@
             <div><img src="@Html.DisplayFor(model => model.detailImg)" style="width:100%"></div>
             
             <div style="text-align:left;margin-left:3%"><h4 style="font-size:36px">@Html.DisplayFor(model => model.entitle)</h4></div>
-            <div style="text-align:left;margin-left:3%"><p>Gold coins: @Model.iconcount </p></div>
+            <div style="text-align:left;margin-left:3%"><p>Gold coins: @Model.iconcount  Remain：@ViewBag.pleft</p></div>
             <div style="text-align:left;margin-left:3%">@Html.Raw(@Model.endetail)</div>
             <br />
             <p><a href="/home/ok/@Model.card_id"><img src="~/images/enico27.png" style="width:50%"></a></p>

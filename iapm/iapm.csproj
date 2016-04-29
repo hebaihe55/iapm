@@ -320,6 +320,7 @@
     <Content Include="images\enico27.png" />
     <Content Include="images\enico32.png" />
     <Content Include="images\enp1.png" />
+    <Content Include="images\enp2.gif" />
     <Content Include="images\enp2.png" />
     <Content Include="images\enp3.png" />
     <Content Include="images\free-parking-1.jpg" />
@@ -390,6 +391,7 @@
     <Content Include="images\moussy-1.jpg" />
     <Content Include="images\moussy-2.jpg" />
     <Content Include="images\p1.png" />
+    <Content Include="images\p2.gif" />
     <Content Include="images\p2.png" />
     <Content Include="images\p3.png" />
     <Content Include="images\PAlACE-1.jpg" />
@@ -404,10 +406,15 @@
     <Content Include="images\steve-madden-bag-1.jpg" />
     <Content Include="images\steve-madden-bag-2.jpg" />
     <Content Include="images\subtle_surface.png" />
+    <Content Include="images\tbanner1.jpg" />
+    <Content Include="images\tbanner2.jpg" />
+    <Content Include="images\tbanner3.jpg" />
     <Content Include="images\tel.png" />
     <Content Include="images\b.gif" />
     <Content Include="images\pp1.jpg" />
     <Content Include="images\bg2.jpg" />
+    <Content Include="images\游戏机会卡3.png" />
+    <Content Include="images\游戏机会卡4.png" />
     <Content Include="images\野兽派下午茶-1.jpg" />
     <Content Include="images\野兽派下午茶-2.jpg" />
     <Content Include="javascripts\graphDemo.js" />
