@@ -1093,8 +1093,8 @@
     <Content Include="Views\Home\NoIndex.cshtml" />
     <Content Include="Views\Home\Short.cshtml" />
     <Content Include="Views\Home\EnNoIndex.cshtml" />
-    <Content Include="Views\Home\rulebak.cshtml" />
     <Content Include="Views\Home\Enrulebak.cshtml" />
+    <Content Include="Views\Home\EnRulebake.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

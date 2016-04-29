@@ -154,7 +154,7 @@ var t = setInterval("timedCount()", 1000);
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
                 success: function () {
-                    $.post("/Home/AddIcon",{id:1 }, function (data, status) {   alert(data+status)});
+                    $.post("/Home/add",{OpenId:@ViewBag.uid,Ibeaconid:@ViewBag.bid,gardenFee:1,gardenType:"分享" }, function (data, status) {  });
 
 
                 },
