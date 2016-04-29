@@ -16,6 +16,41 @@ namespace iapm.Controllers
     {
         private Models.IAMPDBContext db = new Models.IAMPDBContext();
         // GET: Home
+
+
+
+            [HttpPost]
+        public int AddIcon(int? id)
+        {
+          string uid=  System.Web.HttpContext.Current.Session["uid"].ToString()  ;
+
+          string bid= System.Web.HttpContext.Current.Session["uid"].ToString();
+
+            Models.ActiveGarden ag = new ActiveGarden();
+            ag.OpenId = uid;
+            ag.Ibeaconid =int.Parse( bid);
+            ag.gardenFee = 1;
+            ag.gardenType = "分享";
+            ag.cdate = DateTime.Now;
+            ag.ctime = DateTime.Now;
+
+           int i= db.ActiveGardens.Where(t => t.OpenId == ag.OpenId && t.cdate == DateTime.Now.Date && t.gardenType=="分享").Count();
+
+            if (i == 0)
+            {
+                db.ActiveGardens.Add(ag);
+
+                return 1;
+            }
+
+            return 0;
+        }
+
+        public ActionResult EnNoIndex()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
 
