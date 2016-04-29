@@ -327,7 +327,68 @@ namespace iapm.Controllers
             return View();
         }
 
+        public ActionResult BuGou()
+        {
 
+            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+
+            Utils.WeHelper.url = Request.Url.ToString();
+
+
+
+
+
+
+            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            ViewBag.signature = Utils.WeHelper.signature;
+
+
+            string openId = System.Web.HttpContext.Current.Session["uid"].ToString();
+
+            //总共获得积分
+            int iconTotal = db.ActiveGardens.Where(w => w.OpenId == openId).Sum(s => (int?)s.gardenFee).GetValueOrDefault(0);
+
+            //已经使用的积分
+            int iconUsed = db.Cards.Where(t => t.OpenId == openId && t.CardType == "领取").Sum(s => (int?)s.CardFee).GetValueOrDefault();
+
+            ViewBag.totalCount = iconTotal - iconUsed;
+
+
+            return View();
+        }
+        public ActionResult EnBuGou()
+        {
+
+            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+
+            Utils.WeHelper.url = Request.Url.ToString();
+
+
+
+
+
+
+            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            ViewBag.signature = Utils.WeHelper.signature;
+
+
+            string openId = System.Web.HttpContext.Current.Session["uid"].ToString();
+
+            //总共获得积分
+            int iconTotal = db.ActiveGardens.Where(w => w.OpenId == openId).Sum(s => (int?)s.gardenFee).GetValueOrDefault(0);
+
+            //已经使用的积分
+            int iconUsed = db.Cards.Where(t => t.OpenId == openId && t.CardType == "领取").Sum(s => (int?)s.CardFee).GetValueOrDefault();
+
+            ViewBag.totalCount = iconTotal - iconUsed;
+
+
+            return View();
+        }
 
 
         public ActionResult L6()
@@ -631,9 +692,12 @@ namespace iapm.Controllers
 
         }
 
+      
 
-        public int CheckIcon(string id)
+
+        public ActionResult Ok(string id)
         {
+
             string openId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
 
@@ -648,19 +712,65 @@ namespace iapm.Controllers
             int iconKQ = db.Tickets.Where(t => t.card_id == id).Sum(s => s.iconcount);
             if (iconTotal - iconUsed < iconKQ)
             {
-                return 0;
+                RedirectToAction("BuGou");
             }
 
-            return 1;
+
+
+            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+            ViewBag.card_id = Utils.WeHelper.card_id = id;
+            Utils.WeHelper.url = Request.Url.ToString();
+
+
+
+
+
+
+            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            ViewBag.signature = Utils.WeHelper.signature;
+
+            LitJson.JsonData o = new LitJson.JsonData();
+            o["timestamp"] = Utils.WeHelper.timestamp;
+            o["nonce_str"] = Utils.WeHelper.noncestr;
+            o["signature"] = Utils.WeHelper.kqsignature;
+
+            ViewBag.cardExt = o.ToJson();
+
+
+
+
+
+
+
+
+
+
+
+            return View();
         }
-
-
-        public ActionResult Ok(string id)
+        public ActionResult EnOk(string id)
         {
 
+            string openId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
 
-            
+
+            //总共获得积分
+            int iconTotal = db.ActiveGardens.Where(w => w.OpenId == openId).Sum(s => (int?)s.gardenFee).GetValueOrDefault(0);
+
+            //已经使用的积分
+            int iconUsed = db.Cards.Where(t => t.OpenId == openId && t.CardType == "领取").Sum(s => (int?)s.CardFee).GetValueOrDefault(0);
+
+            //卡券积分
+            int iconKQ = db.Tickets.Where(t => t.card_id == id).Sum(s => s.iconcount);
+            if (iconTotal - iconUsed < iconKQ)
+            {
+                RedirectToAction("EnBuGou");
+            }
+
+
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();

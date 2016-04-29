@@ -17,6 +17,10 @@ namespace iapm.Controllers
         // GET: AdminTickets
         public ActionResult Index()
         {
+            if (System.Web.HttpContext.Current.Session["name"] == null)
+            {
+                RedirectToAction("index", "login");
+            }
             return View(db.Tickets.OrderByDescending(t=>t.iconcount).ToList());
         }
         public ActionResult Add()
@@ -26,6 +30,10 @@ namespace iapm.Controllers
         // GET: AdminTickets/Details/5
         public ActionResult Details(int? id)
         {
+            if (System.Web.HttpContext.Current.Session["name"] == null)
+            {
+                RedirectToAction("index", "login");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -41,6 +49,10 @@ namespace iapm.Controllers
         // GET: AdminTickets/Create
         public ActionResult Create()
         {
+            if (System.Web.HttpContext.Current.Session["name"] == null)
+            {
+                RedirectToAction("index", "login");
+            }
             return View();
         }
 
@@ -72,6 +84,14 @@ namespace iapm.Controllers
         // GET: AdminTickets/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (System.Web.HttpContext.Current.Session["name"] == null)
+            {
+                RedirectToAction("index", "login");
+            }
+            if (System.Web.HttpContext.Current.Session["name"] == null)
+            {
+                RedirectToAction("index", "login");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -106,6 +126,10 @@ namespace iapm.Controllers
         // GET: AdminTickets/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (System.Web.HttpContext.Current.Session["name"] == null)
+            {
+                RedirectToAction("index", "login");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

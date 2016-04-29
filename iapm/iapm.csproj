@@ -420,6 +420,7 @@
     <Content Include="images\b.gif" />
     <Content Include="images\pp1.jpg" />
     <Content Include="images\bg2.jpg" />
+    <Content Include="images\zhongwenj.gif" />
     <Content Include="images\游戏机会卡3.png" />
     <Content Include="images\游戏机会卡4.png" />
     <Content Include="images\野兽派下午茶-1.jpg" />
@@ -1098,6 +1099,9 @@
     <Content Include="Views\Home\Rulebake1.cshtml" />
     <Content Include="Views\Home\TiaoKuanBake.cshtml" />
     <Content Include="Views\Home\EnTiaoKuanBake.cshtml" />
+    <Content Include="Views\Home\BuGou.cshtml" />
+    <Content Include="Views\Home\EnBuGou.cshtml" />
+    <Content Include="Views\Home\EnOk.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
