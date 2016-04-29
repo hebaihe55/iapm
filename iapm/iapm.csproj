@@ -321,6 +321,7 @@
     <Content Include="images\enico222.png" />
     <Content Include="images\enico27.png" />
     <Content Include="images\enico32.png" />
+    <Content Include="images\enico333.png" />
     <Content Include="images\enp1.png" />
     <Content Include="images\enp2.gif" />
     <Content Include="images\enp2.png" />
@@ -1093,8 +1094,8 @@
     <Content Include="Views\Home\NoIndex.cshtml" />
     <Content Include="Views\Home\Short.cshtml" />
     <Content Include="Views\Home\EnNoIndex.cshtml" />
-    <Content Include="Views\Home\rulebak.cshtml" />
-    <Content Include="Views\Home\Enrulebak.cshtml" />
+    <Content Include="Views\Home\Rulebake.cshtml" />
+    <Content Include="Views\Home\EnRulebake.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
