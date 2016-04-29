@@ -1089,6 +1089,7 @@
     <Content Include="Views\Home\EnGame.cshtml" />
     <Content Include="Views\Home\NoIndex.cshtml" />
     <Content Include="Views\Home\Short.cshtml" />
+    <Content Include="Views\Home\EnNoIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
