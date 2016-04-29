@@ -21,14 +21,14 @@
             <h3><img src="/images/logo.png" /></h3>
         </header>
         <!--兑换券-->
-        <p style="text-align:right;width:90%; margin-top:5px;"><a href="/home/index">中文</a> |<a href="/home/Enindex">ENGLISH</a> </p>
+        <p style="text-align:right;width:90%; margin-top:5px;"><a href="/home/NoIndex">中文</a> |<a href="/home/EnNoIndex">ENGLISH</a> </p>
         <div class="storyBegin">
             <p><img src="/images/enico15.png"></p>
             <div style="height:153px"></div>
         </div>
         <div class="doMore">
             <a href="javascript:void(0)" onclick="agree()"><img src="~/images/enico111111.png"></a><br />
-            <a href="/home/EnRulebake"><img src="/images/enico17.png"></a><br />
+            <a href="javascript:void(0)" onclick="agree2()"><img src="/images/enico17.png"></a><br />
             <a href="javascript:void(0)" onclick="agree()"><img src="/images/enico333.png"></a><br />
             <a href="javascript:void(0)" onclick="agree()"><img src="~/images/enico222.png"></a>
         </div>
@@ -63,16 +63,32 @@
 
 
             }
-            $(".agreediv .sure").on("click", function () {
-                $(".agreediv").hide();
-                $(".backdiv").hide();
-
-            })
+          
             $(".agreediv2 .sure").on("click", function () {
                 $(".agreediv2").hide();
                 $(".backdiv").hide();
 
             })
+        }
+        $(".agreediv .sure").on("click", function () {
+            $(".agreediv").hide();
+            $(".backdiv").hide();
+
+        })
+        function agree2() {
+            if ($("#agree").attr("checked")) {
+                // alert("请到iapm商场开始游戏！")
+                location.href = "/home/EnRulebake";
+
+            }
+            else {
+                // alert("请同意条款！");
+
+                $(".agreediv").show();
+                $(".backdiv").show();
+
+
+            }
         }
 
     </script>
