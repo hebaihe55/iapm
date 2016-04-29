@@ -20,32 +20,32 @@ namespace iapm.Controllers
 
 
          [HttpPost]
-        public string  AddIcon(int  bid,string uid)
+        public string  AddIcon(int id)
         {
-          //  string uid = System.Web.HttpContext.Current.Session["uid"].ToString();
+            //  string uid = System.Web.HttpContext.Current.Session["uid"].ToString();
 
-          //  string bid = System.Web.HttpContext.Current.Session["bid"].ToString();
+            //  string bid = System.Web.HttpContext.Current.Session["bid"].ToString();
+            //Models.ActiveGarden ag = new ActiveGarden();
+            //ag.OpenId = "oXXgKjy0gDLYvPrCA9tqhQAFFl7w";
+            //ag.Ibeaconid = 12;
+            //ag.gardenFee = 1;
+            //ag.gardenType = "分享";
+            //ag.cdate = DateTime.Now;
+            //ag.ctime = DateTime.Now;
 
-            Models.ActiveGarden ag = new ActiveGarden();
-            ag.OpenId = uid;
-            ag.Ibeaconid = bid;
-            ag.gardenFee = 1;
-            ag.gardenType = "分享";
-            ag.cdate = DateTime.Now;
-            ag.ctime = DateTime.Now;
 
-          
-            int i = db.ActiveGardens.Where(t => t.OpenId == ag.OpenId && t.cdate == ag.cdate && t.gardenType == "分享").Count();
+            // int i = db.ActiveGardens.Where(t => t.OpenId == ag.OpenId && t.cdate == ag.cdate && t.gardenType == "分享").Count();
 
-            if (i == 0)
-            {
-                db.ActiveGardens.Add(ag);
-                db.SaveChanges();
+            //db.ActiveGardens.Add(ag);
+            //db.SaveChanges();
+
+           
+             
 
                 return "1";
-            }
+         
 
-            return "0";
+          
         }
 
         public ActionResult EnNoIndex()
@@ -236,6 +236,17 @@ namespace iapm.Controllers
             ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
+
+
+
+        public ActionResult rulebake()
+        {
+            return View();
+        }
+
+
+
+
         public ActionResult TiaoKuan()
         {
 
