@@ -217,6 +217,30 @@ namespace iapm.Controllers
             ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
+
+        public ActionResult Short()
+        {
+
+
+            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+
+            Utils.WeHelper.url = Request.Url.ToString();
+
+
+
+
+
+
+            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            ViewBag.signature = Utils.WeHelper.signature;
+            return View();
+        }
+
+
+
+
         public ActionResult L6()
         {
 
@@ -283,7 +307,7 @@ namespace iapm.Controllers
                 return HttpNotFound();
             }
 
-            int pleft = ticket.quantity - db.Cards.Where(w => w.CardId == ticket.card_id).Count();
+            int pleft = ticket.quantity - db.Cards.Where(w => w.CardId == ticket.card_id && w.CardType=="领取").Count();
 
             ViewBag.pleft = pleft;
 
@@ -524,7 +548,7 @@ namespace iapm.Controllers
             int iconKQ = db.Tickets.Where(t => t.card_id == id).Sum(s => s.iconcount);
             if (iconTotal- iconUsed < iconKQ)
             {
-                return RedirectToAction("Prize");
+                return RedirectToAction("Short");
             }
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
@@ -822,7 +846,7 @@ namespace iapm.Controllers
 
             Random rd = new Random();
 
-            //在双倍积分时间内积分*2
+            //在双倍积分时间内积分 * 2
             if (DateTime.Now >= ibeacon.dbtime && DateTime.Now <= ibeacon.detime)
             {
                 ibeacon.maxifen *= 2;
@@ -858,7 +882,7 @@ namespace iapm.Controllers
             catch (Exception ex)
             {
                 Utils.Log.Error("Game", ex.Message);
-
+                ViewBag.fee = 0;
             }
 
 
@@ -880,6 +904,10 @@ namespace iapm.Controllers
         }
 
 
+
+
+
+
         public ActionResult EnPrizeDetail(int? id)
         {
             if (id == null)
@@ -891,10 +919,10 @@ namespace iapm.Controllers
             {
                 return HttpNotFound();
             }
-            int pleft = ticket.quantity - db.Cards.Where(w => w.CardId == ticket.card_id).Count();
+
+            int pleft = ticket.quantity - db.Cards.Where(w => w.CardId == ticket.card_id && w.CardType == "领取").Count();
 
             ViewBag.pleft = pleft;
-
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
@@ -911,7 +939,8 @@ namespace iapm.Controllers
             ViewBag.signature = Utils.WeHelper.signature;
             return View(ticket);
         }
-    
+
+
 
         public ActionResult EnPrize()
         {
