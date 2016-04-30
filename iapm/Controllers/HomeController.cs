@@ -60,74 +60,22 @@ namespace iapm.Controllers
 
         public ActionResult Index()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
         }
         public ActionResult NoIndex()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
         }
         public ActionResult Rule()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
         }
         public ActionResult Rulebake1()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
 
@@ -143,132 +91,42 @@ namespace iapm.Controllers
 
         public ActionResult LG1()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
 
         public ActionResult LG2()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
         }
 
         public ActionResult L1()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+          
             return View();
         }
         public ActionResult L2()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
 
 
         public ActionResult L3()
         {
+            
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
         public ActionResult L4()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
         public ActionResult L5()
         {
+            
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
 
@@ -290,20 +148,8 @@ namespace iapm.Controllers
 
         public ActionResult TiaoKuan()
         {
+            
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
 
@@ -311,40 +157,11 @@ namespace iapm.Controllers
         {
 
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
-            return View();
+               return View();
         }
 
         public ActionResult BuGou()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
-
-
             string openId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
             //总共获得积分
@@ -360,22 +177,7 @@ namespace iapm.Controllers
         }
         public ActionResult EnBuGou()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
-
-
+            
             string openId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
             //总共获得积分
@@ -393,56 +195,15 @@ namespace iapm.Controllers
 
         public ActionResult L6()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
         }
         public ActionResult GameMap()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
-            return View();
+return View();
         }
         public ActionResult GameBegin()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
             return View();
         }
         public ActionResult PrizeDetail(int? id)
@@ -461,19 +222,7 @@ namespace iapm.Controllers
 
             ViewBag.pleft = pleft;
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+           
             return View(ticket);
         }
 
@@ -517,20 +266,7 @@ namespace iapm.Controllers
                     };
 
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
-
+           
             return View(q.OrderBy(o => o.flag).ToList());
         }
 
@@ -604,19 +340,18 @@ namespace iapm.Controllers
             }
 
 
+
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
+          
             Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
 
             ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
             ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
             ViewBag.signature = Utils.WeHelper.signature;
+
+
+
 
             return View();
         }
@@ -700,7 +435,7 @@ namespace iapm.Controllers
 
             string openId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
-
+            //string openId = "oXXgKjy0gDLYvPrCA9tqhQAFFl7w";
 
             //总共获得积分
             int iconTotal = db.ActiveGardens.Where(w => w.OpenId == openId).Sum(s => (int?)s.gardenFee).GetValueOrDefault(0);
@@ -712,7 +447,7 @@ namespace iapm.Controllers
             int iconKQ = db.Tickets.Where(t => t.card_id == id).Sum(s => s.iconcount);
             if (iconTotal - iconUsed < iconKQ)
             {
-                RedirectToAction("BuGou");
+              return  RedirectToAction("BuGou", "Home");
             }
 
 
@@ -723,15 +458,12 @@ namespace iapm.Controllers
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
             ViewBag.card_id = Utils.WeHelper.card_id = id;
             Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
+            
             ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
             ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
             ViewBag.signature = Utils.WeHelper.signature;
+
+
 
             LitJson.JsonData o = new LitJson.JsonData();
             o["timestamp"] = Utils.WeHelper.timestamp;
@@ -769,7 +501,7 @@ namespace iapm.Controllers
             int iconKQ = db.Tickets.Where(t => t.card_id == id).Sum(s => s.iconcount);
             if (iconTotal - iconUsed < iconKQ)
             {
-                RedirectToAction("EnBuGou");
+                return RedirectToAction("EnBuGou");
             }
 
 
@@ -812,220 +544,78 @@ namespace iapm.Controllers
         public ActionResult EnIndex()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+        
             return View();
         }
 
         public ActionResult EnTiaoKuan()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
-            return View();
+return View();
         }
 
 
         public ActionResult EnL1()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+           
             return View();
         }
         public ActionResult EnL2()
         {
-
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
         }
         public ActionResult EnL3()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+         
             return View();
         }
         public ActionResult EnL4()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
         }
         public ActionResult EnL5()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+           
             return View();
         }
 
         public ActionResult EnL6()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
         }
 
         public ActionResult EnLG1()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+          
             return View();
         }
 
         public ActionResult EnLG2()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+           
             return View();
         }
 
         public ActionResult EnGameMap()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+           
             return View();
         }
 
         public ActionResult EnRule()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View();
 
 
@@ -1034,19 +624,7 @@ namespace iapm.Controllers
         public ActionResult EnGameBegin()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+           
             return View();
         }
 
@@ -1120,17 +698,14 @@ namespace iapm.Controllers
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
+         
             Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
 
             ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
             ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
             ViewBag.signature = Utils.WeHelper.signature;
+
+
 
             return View();
         }
@@ -1156,19 +731,7 @@ namespace iapm.Controllers
 
             ViewBag.pleft = pleft;
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-
-
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            
             return View(ticket);
         }
 
@@ -1211,15 +774,7 @@ namespace iapm.Controllers
                     };
 
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+          
 
             return View(q.OrderBy(o => o.flag).ToList());
         }

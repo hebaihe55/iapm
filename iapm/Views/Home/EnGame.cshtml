@@ -34,7 +34,7 @@
      
         <div style="position:absolute;bottom:330px; left:0; right:0; width:50%;height:auto;margin:auto;z-index:5;display:none;text-align:center;" class="mark">
             @if (@ViewBag.fee == 0)
-        { <span style="font-size:16px;color:red; "> you have already shaken here, <br />please go to the others！</span> }
+        { <span style="font-size:16px;color:red; "> Mission completed here. <br />please find another checkpoint！</span> }
         else {  <span style="font-size:20px;color:red; margin-top:5px">win: @ViewBag.fee coin</span>}
     </div>
 
@@ -137,40 +137,40 @@
         wx.ready(function () {
             // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
 
+
             wx.onMenuShareTimeline({
-                title: 'please visit us at iapm mall for the iapm “shake and win”reward !', // 分享标题
+                title: 'iapm摇金币 赢奖赏 等你来参加！', // 分享标题
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
+
                 success: function () {
-                    // 用户确认分享后执行的回调函数
                     $.post("/Home/add", { OpenId: '@ViewBag.uid', Ibeaconid: '@ViewBag.bid', gardenFee: 1, gardenType: '分享' }, function (data, status) { });
 
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
-
                 }
             });
 
 
             wx.onMenuShareAppMessage({
-                title: 'please visit us at iapm mall for the iapm “shake and win”reward !', // 分享标题
-                desc: '“shake and win”reward, come and join us!', // 分享描述
+                title: 'iapm摇金币 赢奖赏 等你来参加！', // 分享标题
+                desc: '我在iapm摇金币 赢奖赏 等你来参加！', // 分享描述
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
                 type: '', // 分享类型,music、video或link，不填默认为link
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                 success: function () {
                     // 用户确认分享后执行的回调函数
-                    $.post("/Home/add", { OpenId: '@ViewBag.uid', Ibeaconid: '@ViewBag.bid', gardenFee: 1, gardenType: '分享' }, function (data, status) { });
+
+                    $.post("/Home/add",{OpenId:'@ViewBag.uid',Ibeaconid:'@ViewBag.bid',gardenFee:1,gardenType:'分享' }, function (data, status) { });
+
 
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
                 }
             });
-          
-
 
 
 

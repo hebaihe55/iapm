@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <title>游戏</title>
+    <title>Game</title>
     <link href="/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="/css/com.css" rel="stylesheet" type="text/css" />
     <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
@@ -18,7 +18,7 @@
             <h3><a href="/home/Index" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /></h3>
         </header>
         <div style="position:relative; background:url(/images/bg5.jpg) no-repeat #fdf9e3 0 0px;background-size: 100% auto; height:100%; padding-left:30px">
-            <div style="width:200px;font-size:18px; margin-top:10px;float:left;">积分：<label id="seconds">@ViewBag.totalCount</label></div>
+            <div style="width:200px;font-size:18px; margin-top:10px;float:left;">icon：<label id="seconds">@ViewBag.totalCount</label></div>
 
 
             <div>
@@ -31,169 +31,111 @@
 
         </div>
         <img src="~/images/yingwen.gif" style="position:absolute;bottom:300px; left:0; right:0; width:80%;height:auto; margin:auto;z-index:4;display:none;" class="kaquan" />
-        <div style="position:absolute;bottom:200px; left:0; right:0; width:40%;height:auto;margin:auto;z-index:4;display:none;" class="duihuang"><a href="/Home/Prize"><img src="/images/ico32.png" style="position:absolute;left:0;top:0;z-index:4;"></a></div>
+        <div style="position:absolute;bottom:200px; left:0; right:0; width:40%;height:auto;margin:auto;z-index:4;display:none;" class="duihuang"><a href="/Home/enPrize"><img src="/images/enico32.png" style="position:absolute;left:0;top:0;z-index:4;"></a></div>
         <div style="position:absolute;bottom:330px; left:0; right:0; width:50%;height:auto;margin:auto;z-index:5;display:none;text-align:center;" class="mark">
             @if (@ViewBag.fee == 0)
-        { <span style="font-size:16px;color:red; "> </span> }
-        else {  <span style="font-size:20px;color:red; margin-top:5px"></span>}
+            { <span style="font-size:16px;color:red; "> </span> }
+            else {  <span style="font-size:20px;color:red; margin-top:5px"></span>}
+        </div>
+
+
+
+
     </div>
 
 
 
 
-</div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
 
 
+    
 
+    <script type="text/javascript">
+        var t = setInterval("timedCount()", 1000);
 
-<script type="text/javascript" src="/js/jquery.min.js"></script>
+        function timedCount() {
 
-
-
-
-<script type="text/javascript">
-var t = setInterval("timedCount()", 1000);
-
-                    function timedCount() {
-
-            $("#seconds").html(1 - 1);
-                        if ($("#seconds").html() == "0")
-            {
-                                    $(".bgFix").fadeIn();
-                                    $(".kaquan").fadeIn();
-                                    $(".duihuang").fadeIn();
-                                    $(".mark").fadeIn();
+           
+         
+                $(".bgFix").fadeIn();
+                $(".kaquan").fadeIn();
+                $(".duihuang").fadeIn();
+                $(".mark").fadeIn();
                 $("#jb").attr("src", "/images/jb.png");
                 $("#jifen").show();
 
 
 
-                            clearInterval(t);
-                        }
-                    }
+                clearInterval(t);
+            
+        }
 
 
 
 
-                    //先判断设备是否支持HTML5摇一摇功能
-                    if (window.DeviceMotionEvent) {
-                        //获取移动速度，得到device移动时相对之前某个时间的差值比
-                        window.addEventListener('devicemotion', deviceMotionHandler, false);
-                    } else {
+        //先判断设备是否支持HTML5摇一摇功能
+        if (window.DeviceMotionEvent) {
+            //获取移动速度，得到device移动时相对之前某个时间的差值比
+            window.addEventListener('devicemotion', deviceMotionHandler, false);
+        } else {
 
-                        alert('您好，你目前所用的设备好像不支持重力感应哦！');
-                    }
+            alert('您好，你目前所用的设备好像不支持重力感应哦！');
+        }
 
-                    //设置临界值,这个值可根据自己的需求进行设定，默认就3000也差不多了
-                    var shakeThreshold = 500;
-                    //设置最后更新时间，用于对比
-                    var lastUpdate = 0;
-                    //设置位置速率
-                    var curShakeX = curShakeY = curShakeZ = lastShakeX = lastShakeY = lastShakeZ = 0;
+        //设置临界值,这个值可根据自己的需求进行设定，默认就3000也差不多了
+        var shakeThreshold = 500;
+        //设置最后更新时间，用于对比
+        var lastUpdate = 0;
+        //设置位置速率
+        var curShakeX = curShakeY = curShakeZ = lastShakeX = lastShakeY = lastShakeZ = 0;
 
-                    function deviceMotionHandler(event) {
+        function deviceMotionHandler(event) {
 
-                    //获得重力加速
-                    var acceleration = event.accelerationIncludingGravity;
+            //获得重力加速
+            var acceleration = event.accelerationIncludingGravity;
 
-                //获得当前时间戳
-                var curTime = new Date().getTime();
+            //获得当前时间戳
+            var curTime = new Date().getTime();
 
-                        if ((curTime - lastUpdate) > 100) {
+            if ((curTime - lastUpdate) > 100) {
 
-                            //时间差
-                            var diffTime = curTime - lastUpdate;
+                //时间差
+                var diffTime = curTime - lastUpdate;
                 lastUpdate = curTime;
 
 
-                            //x轴加速度
-                            curShakeX = acceleration.x;
-                            //y轴加速度
-                            curShakeY = acceleration.y;
-                            //z轴加速度
-                            curShakeZ = acceleration.z;
+                //x轴加速度
+                curShakeX = acceleration.x;
+                //y轴加速度
+                curShakeY = acceleration.y;
+                //z轴加速度
+                curShakeZ = acceleration.z;
 
-                            var speed = Math.abs(curShakeX + curShakeY + curShakeZ - lastShakeX - lastShakeY - lastShakeZ) / diffTime * 10000;
+                var speed = Math.abs(curShakeX + curShakeY + curShakeZ - lastShakeX - lastShakeY - lastShakeZ) / diffTime * 10000;
 
-                            if (speed > shakeThreshold) {
-	            //TODO 相关方法，比如：
+                if (speed > shakeThreshold) {
+                    //TODO 相关方法，比如：
 
-	            //播放音效
+                    //播放音效
 
-	            $("#jb").attr("src", "/images/a.gif");
+                    $("#jb").attr("src", "/images/a.gif");
 
+                }
+                else {
+                    $("#jb").attr("src", "/images/jb.png");
+                }
+
+                lastShakeX = curShakeX;
+                lastShakeY = curShakeY;
+                lastShakeZ = curShakeZ;
             }
-                            else {
-	            $("#jb").attr("src", "/images/jb.png");
         }
-
-        lastShakeX = curShakeX;
-                            lastShakeY = curShakeY;
-                            lastShakeZ = curShakeZ;
-                        }
-                    }
-</script>
-
-
-
-<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script>
-        wx.config({
-            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-            appId: "@ViewBag.appId", // 必填，公众号的唯一标识
-            timestamp: "@ViewBag.timestamp", // 必填，生成签名的时间戳
-            nonceStr: "@ViewBag.nonceStr", // 必填，生成签名的随机串
-            signature: "@ViewBag.signature",// 必填，签名，见附录1
-            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        });
-        wx.error(function (res) {
-            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
-        });
-        wx.ready(function () {
-            // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-
-
-            wx.onMenuShareTimeline({
-                title: 'iapm摇金币 赢奖赏 等你来参加！', // 分享标题
-                link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
-                imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
-
-                success: function () {
-                    $.post("/Home/add", { OpenId: '@ViewBag.uid', Ibeaconid: '@ViewBag.bid', gardenFee: 1, gardenType: '分享' }, function (data, status) { });
-
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-
-
-            wx.onMenuShareAppMessage({
-                title: 'iapm摇金币 赢奖赏 等你来参加！', // 分享标题
-                desc: '我在iapm摇金币 赢奖赏 等你来参加！', // 分享描述
-                link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
-                imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
-                type: '', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-
-                    $.post("/Home/add",{OpenId:'@ViewBag.uid',Ibeaconid:'@ViewBag.bid',gardenFee:1,gardenType:'分享' }, function (data, status) { });
-
-
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
+    </script>
 
 
 
 
-
-        });
-
-</script>
 
 </body>
 </html>
