@@ -241,7 +241,7 @@ return View();
 
             ViewBag.totalCount = iconTotal- iconUsed;
 
-            var q = from t in db.Tickets
+            var q = from t in db.Tickets.Where(t => t.etime >= DateTime.Now && t.btime <= DateTime.Now)
                     join c in db.Cards.Where(t=>t.CardType=="领取") on
                     t.card_id equals c.CardId
                     into cards
@@ -749,7 +749,7 @@ return View();
 
             ViewBag.totalCount = iconTotal - iconUsed;
 
-            var q = from t in db.Tickets
+            var q = from t in db.Tickets.Where(t=>t.etime>=DateTime.Now && t.btime<=DateTime.Now)
                     join c in db.Cards.Where(t => t.CardType == "领取") on
                    t.card_id equals c.CardId
                     into cards

@@ -80,17 +80,19 @@ namespace iapm.Controllers
 
             if (WPD.GetValue("Event").ToString() == "subscribe")
             {
-                   
 
-              string rexm2 = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[text]]></ MsgType><Content><![CDATA[感谢关注iapm商场官方微信，即日起凭本迎新信息当日至商场LG2礼宾台，即有机会赢取Snoopy文具壹份。数量有限，先到先得，送完即止。活动期间，每人限领一次。]]></Content></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
-                Response.Write(rexm2);
-            Response.End();
+
+                string rexm = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[感谢关注iapm商场官方微信，即日起凭本迎新信息当日至商场LG2礼宾台，即有机会赢取Snoopy文具壹份。数量有限，先到先得，送完即止。活动期间，每人限领一次。]]></Content></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
+
+
+                Response.Write(rexm);
+                Response.End();
             }
             if (WPD.GetValue("Event").ToString() == "CLICK")
             {
                 if (WPD.GetValue("EventKey").ToString() == "bcyh")
                 {
-                   
+
                     string rexm1 = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId><![CDATA[ap_ObbvMyKJD6qJ_fBooNA_1wVSwLmJutGEgLEUkDr0mDa0bOf_b9njuBYoJXKZ2]]></MediaId></Image></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
 
 
@@ -104,7 +106,7 @@ namespace iapm.Controllers
                     Response.Write(rexml);
                     Response.End();
                 }
-               
+
 
                 else if (WPD.GetValue("EventKey").ToString() == "jj")
                 {
@@ -140,7 +142,7 @@ namespace iapm.Controllers
                 card.CardId = WPD.GetValue("CardId").ToString();
                 card.CardCode = WPD.GetValue("UserCardCode").ToString();
                 card.CardType = "删除";
-                card.CardFee=GetCardFee(WPD.GetValue("CardId").ToString());
+                card.CardFee = GetCardFee(WPD.GetValue("CardId").ToString());
                 card.CCtime = DateTime.Now;
                 db.Cards.Add(card);
                 db.SaveChanges();
@@ -174,14 +176,14 @@ namespace iapm.Controllers
 
         private int GetCardFee(string ticketid)
         {
-          var tick=  db.Tickets.Where(w => w.card_id == ticketid).SingleOrDefault();
+            var tick = db.Tickets.Where(w => w.card_id == ticketid).SingleOrDefault();
             return tick.iconcount;
         }
 
 
         private void DowithText(Utils.WxPayData WPD)
         {
-            
+
 
             if (WPD.GetValue("Content").ToString() == "红包")
             {
