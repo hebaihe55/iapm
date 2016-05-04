@@ -68,6 +68,10 @@
                 success: function (res) {
                     //var cardList = res.cardList; // 添加的卡券列表信息
                     location.href = "/home/prize";
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                    location.href = "/home/prize";
                 }
             });
 

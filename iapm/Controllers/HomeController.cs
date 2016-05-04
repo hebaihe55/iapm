@@ -172,6 +172,14 @@ namespace iapm.Controllers
 
             ViewBag.totalCount = iconTotal - iconUsed;
 
+            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+
+            Utils.WeHelper.url = Request.Url.ToString();
+
+            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            ViewBag.signature = Utils.WeHelper.signature;
 
             return View();
         }
@@ -188,6 +196,14 @@ namespace iapm.Controllers
 
             ViewBag.totalCount = iconTotal - iconUsed;
 
+            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+
+            Utils.WeHelper.url = Request.Url.ToString();
+
+            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            ViewBag.signature = Utils.WeHelper.signature;
 
             return View();
         }

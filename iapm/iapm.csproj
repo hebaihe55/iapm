@@ -327,6 +327,7 @@
     <Content Include="images\enp2.gif" />
     <Content Include="images\enp2.png" />
     <Content Include="images\enp3.png" />
+    <Content Include="images\enthanks.gif" />
     <Content Include="images\free-parking-1.jpg" />
     <Content Include="images\free-parking-2.jpg" />
     <Content Include="images\furley_bg.png" />
@@ -413,6 +414,7 @@
     <Content Include="images\b.gif" />
     <Content Include="images\pp1.jpg" />
     <Content Include="images\bg2.jpg" />
+    <Content Include="images\thanks.gif" />
     <Content Include="images\yingwen.gif" />
     <Content Include="images\zhongwenj.gif" />
     <Content Include="images\游戏机会卡3.png" />
