@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace iapm.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
         // GET: Admin
 

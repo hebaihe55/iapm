@@ -923,6 +923,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminTicketsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IbeaconsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -1108,6 +1109,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="updata\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

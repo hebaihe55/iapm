@@ -10,27 +10,21 @@ using iapm.Models;
 
 namespace iapm.Controllers
 {
-    public class IbeaconsController : Controller
+    public class IbeaconsController : BaseController
     {
         private IAMPDBContext db = new IAMPDBContext();
 
         // GET: Ibeacons
         public ActionResult Index()
         {
-            if (System.Web.HttpContext.Current.Session["name"] == null)
-            {
-                RedirectToAction("index", "login");
-            }
+            
             return View(db.Ibeacons.ToList());
         }
 
         // GET: Ibeacons/Details/5
         public ActionResult Details(int? id)
         {
-            if (System.Web.HttpContext.Current.Session["name"] == null)
-            {
-                RedirectToAction("index", "login");
-            }
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -46,10 +40,7 @@ namespace iapm.Controllers
         // GET: Ibeacons/Create
         public ActionResult Create()
         {
-            if (System.Web.HttpContext.Current.Session["name"] == null)
-            {
-                RedirectToAction("index", "login");
-            }
+            
             return View();
         }
 
@@ -73,14 +64,7 @@ namespace iapm.Controllers
         // GET: Ibeacons/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (System.Web.HttpContext.Current.Session["name"] == null)
-            {
-                RedirectToAction("index", "login");
-            }
-            if (System.Web.HttpContext.Current.Session["name"] == null)
-            {
-                RedirectToAction("index", "login");
-            }
+           
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -112,10 +96,7 @@ namespace iapm.Controllers
         // GET: Ibeacons/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (System.Web.HttpContext.Current.Session["name"] == null)
-            {
-                RedirectToAction("index", "login");
-            }
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

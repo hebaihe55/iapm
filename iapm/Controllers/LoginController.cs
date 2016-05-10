@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace iapm.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController :Controller
     {
         public ActionResult Index()
         {
@@ -22,12 +22,21 @@ namespace iapm.Controllers
         {
             if (login.name == ConfigurationManager.AppSettings["name"].ToString() && login.pwd == ConfigurationManager.AppSettings["pwd"].ToString())
             {
-                System.Web.HttpContext.Current.Session["name"] = login.name;
+                System.Web.HttpContext.Current.Session["userinfo"] = login.name;
                 return RedirectToAction("Index", "Admin");
             }
             ViewBag.name = login.name;
             ViewBag.password = login.pwd;
             return View();
+        }
+
+        public ActionResult LogOut()
+        {
+           
+                System.Web.HttpContext.Current.Session["userinfo"] = null;
+                return RedirectToAction("Index", "Login");
+           
+        
         }
     }
 }

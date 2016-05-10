@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<iapm.Models.Ticket>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "卡券管理";
     Layout = "~/Views/_LayoutPage.cshtml";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("添加", "Create")
 </p>
 <table class="table">
     <tr>
@@ -62,9 +62,10 @@
      
       
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Ticketid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Ticketid }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Ticketid })
+            @Html.ActionLink("修改", "Edit", new { id=item.Ticketid }) |
+            @Html.ActionLink("详情", "Details", new { id=item.Ticketid }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.Ticketid })
+           
         </td>
     </tr>
 }
