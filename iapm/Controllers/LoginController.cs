@@ -23,7 +23,7 @@ namespace iapm.Controllers
             if (login.name == ConfigurationManager.AppSettings["name"].ToString() && login.pwd == ConfigurationManager.AppSettings["pwd"].ToString())
             {
                 System.Web.HttpContext.Current.Session["userinfo"] = login.name;
-                return RedirectToAction("Index", "Admin");
+                return RedirectToAction("Index", "AdminUsers");
             }
             ViewBag.name = login.name;
             ViewBag.password = login.pwd;

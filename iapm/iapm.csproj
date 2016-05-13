@@ -917,12 +917,13 @@
     <Content Include="Views\Tests\Edit.cshtml" />
     <Content Include="Views\Tests\Index.cshtml" />
     <Content Include="Views\_LayoutPage.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\AdminUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminTicketsController.cs" />
+    <Compile Include="Controllers\AdminUsersController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IbeaconsController.cs" />
@@ -1109,6 +1110,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="updata\" />
+    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <PropertyGroup>
