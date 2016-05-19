@@ -896,6 +896,7 @@
     <Content Include="ckeditor\LICENSE.md" />
     <Content Include="ckeditor\README.md" />
     <None Include="Properties\PublishProfiles\iapm.pubxml" />
+    <None Include="Properties\PublishProfiles\iapmTest.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

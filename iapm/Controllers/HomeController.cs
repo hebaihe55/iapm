@@ -251,7 +251,30 @@ return View();
             return View(ticket);
         }
 
+        public double geoconv(string geo)
+        {
 
+          string strJson=  Utils.HttpService.Get("http://api.map.baidu.com/geoconv/v1/?coords=" + geo + "&ak=4cd1159aeca678076305724404e4bf88");
+
+            Utils.Log.Info("geovonv", strJson);
+
+            LitJson.JsonData jd = LitJson.JsonMapper.ToObject(strJson);
+
+            string x = "";
+            string y = "";
+
+            foreach (LitJson.JsonData j in jd["result"])
+            {
+                x = j["x"].ToString();
+                y = j["y"].ToString();
+            }
+
+            double dd=   Utils.Utils.GetShortDistance(double.Parse(x), double.Parse(y), 121.464256, 31.221655);
+
+            return dd;
+
+
+        }
 
 
         public ActionResult Prize()
@@ -441,7 +464,7 @@ return View();
             }
             else
             {
-                Response.Redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Utils.WeHelper.appid + "&redirect_uri=http://iapm.cjoy.cn/home/Login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
+                Response.Redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Utils.WeHelper.appid + "&redirect_uri=http://test.aba0.cn/home/Login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
             }
             //AppID(应用ID)wxa25b827fd42bdf7f
             //AppSecret(应用密钥)00639e0733e2c80d822ccd6a3cbdac51
