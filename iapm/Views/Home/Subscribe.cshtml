@@ -8,32 +8,97 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>关注</title>
-    
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
 </head>
 <body>
     <div>
-    
-    </div>
-    <script src="http://zb.weixin.qq.com/nearbycgi/addcontact/BeaconAddContactJsBridge.js"></script>
-    <script type="text/javascript">
-	BeaconAddContactJsBridge.ready(function(){
-		//判断是否关注
-		BeaconAddContactJsBridge.invoke('checkAddContactStatus',{} ,function(apiResult){
-			if(apiResult.err_code == 0){
-				var status = apiResult.data;
-				if(status == 1){
-				    location.href = "http://test.aba0.cn/Home/Login";
-				}else{
 
-					//跳转到关注页
-				  BeaconAddContactJsBridge.invoke('jumpAddContact');
-				}
-			}else{
-				alert(apiResult.err_msg)
-			}
-		});
- 	});
+    </div>
+
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: "@ViewBag.appId", // 必填，公众号的唯一标识
+            timestamp: "@ViewBag.timestamp", // 必填，生成签名的时间戳
+            nonceStr: "@ViewBag.nonceStr", // 必填，生成签名的随机串
+            signature: "@ViewBag.signature",// 必填，签名，见附录1
+            jsApiList: ['getLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+        wx.error(function (res) {
+            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+        });
+        wx.ready(function () {
+            // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+
+            wx.getLocation({
+                type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                success: function (res) {
+
+                    // alert( JSON.stringify( res));
+                    var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                    var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                    var speed = res.speed; // 速度，以米/每秒计
+                    var accuracy = res.accuracy; // 位置精度
+
+                    $.get("/home/geoconv", { geo: longitude + "," + latitude }, function (data) {
+
+                        //alert(data);
+
+                        if (data >= 6000) {
+                            location.href = "/home/noindex";
+                        }
+                        else {
+                            location.href = "/home/subview";
+                        }
+
+                    })
+
+                },
+                cancel: function (res) {
+                    location.href = "/home/noindex";
+                }
+            });
+
+
+        });
+
+
+
+        function getFlatternDistance(lat1, lng1, lat2, lng2) {
+            var f = getRad((lat1 + lat2) / 2);
+            var g = getRad((lat1 - lat2) / 2);
+            var l = getRad((lng1 - lng2) / 2);
+
+            var sg = Math.sin(g);
+            var sl = Math.sin(l);
+            var sf = Math.sin(f);
+
+            var s, c, w, r, d, h1, h2;
+            var a = EARTH_RADIUS;
+            var fl = 1 / 298.257;
+
+            sg = sg * sg;
+            sl = sl * sl;
+            sf = sf * sf;
+
+            s = sg * (1 - sl) + (1 - sf) * sl;
+            c = (1 - sg) * (1 - sl) + sf * sl;
+
+            w = Math.atan(Math.sqrt(s / c));
+            r = Math.sqrt(s * c) / w;
+            d = 2 * w * a;
+            h1 = (3 * r - 1) / 2 / c;
+            h2 = (3 * r + 1) / 2 / s;
+
+            return d * (1 + fl * (h1 * sf * (1 - sg) - h2 * (1 - sf) * sg));
+        }
     </script>
-  
+
+
+
+
+
 </body>
 </html>

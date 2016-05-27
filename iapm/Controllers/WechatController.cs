@@ -99,6 +99,15 @@ namespace iapm.Controllers
                     Response.Write(rexm1);
                     Response.End();
                 }
+                else if (WPD.GetValue("EventKey").ToString() == "yaoyiyao")
+                {
+
+                    string rexm1 = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId><![CDATA[poWp7dTQd6UGCAmjOcIR__Ux32iZFj0qcGgdDA95q2fb7P66iaeZBavvIFlXL7Gn]]></MediaId></Image></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
+
+
+                    Response.Write(rexm1);
+                    Response.End();
+                }
                 else if (WPD.GetValue("EventKey").ToString() == "ivc")
                 {
                     string rexml = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>20140814</CreateTime><MsgType><![CDATA[news]]></MsgType><ArticleCount>2</ArticleCount><Articles><item><Title><![CDATA[iapm VIC Club 诚邀您的加入]]></Title> <Description><![CDATA[点击进入详情页面]]></Description><PicUrl><![CDATA[http://iapm.cjoy.cn/images/tbanner1.jpg]]></PicUrl><Url><![CDATA[http://mp.weixin.qq.com/s?__biz=MjM5MjI1NDE4NQ==&mid=200725952&idx=1&sn=281b840a49bb71a85b3d0ccf12aaeb85&scene=18#rd]]></Url></item><item><Title><![CDATA[iapm VIC Club | 积分奖赏换领]]></Title> <Description><![CDATA[点击进入详情页面]]></Description><PicUrl><![CDATA[http://iapm.cjoy.cn/images/tbanner2.jpg]]></PicUrl><Url><![CDATA[http://mp.weixin.qq.com/s?__biz=MjM5MjI1NDE4NQ==&mid=200725952&idx=2&sn=a1b0b135c864e7378aea769868bc67a3&scene=18#rd]]></Url></item></Articles></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());

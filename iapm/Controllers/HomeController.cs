@@ -17,9 +17,33 @@ namespace iapm.Controllers
         private Models.IAMPDBContext db = new Models.IAMPDBContext();
         // GET: Home
 
+        public ActionResult Subscribe(int id)
+        {
+            System.Web.HttpContext.Current.Session["bid"] = id;
 
 
-         [HttpPost]
+            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+
+            Utils.WeHelper.url = Request.Url.ToString();
+
+            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            ViewBag.signature = Utils.WeHelper.signature;
+
+            return View();
+        }
+
+
+        public ActionResult Subview()
+        {
+           
+            return View();
+        }
+
+
+
+        [HttpPost]
         public int add(Models.ActiveGarden ag)
         {
 
@@ -221,14 +245,7 @@ return View();
         public ActionResult GameBegin()
         {
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
-
-            Utils.WeHelper.url = Request.Url.ToString();
-
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+           
             return View();
         }
         public ActionResult PrizeDetail(int? id)
@@ -359,10 +376,20 @@ return View();
 
             ac.gardenType = "普通";
 
+            int? totalCount = db.ActiveGardens.Where(t => t.OpenId == ac.OpenId && t.cdate.Equals(DateTime.Today)).Sum(s => s.gardenFee).GetValueOrDefault(0);
 
 
+            if (totalCount <= 200)
+            {
+                ViewBag.fee = ac.gardenFee;
+            }
+            else
+            {
+                ac.gardenFee = 5;
+                ViewBag.fee = 5;
+            }
 
-            ViewBag.fee = ac.gardenFee;
+            
 
 
             int jfk = rd.Next(1, 100);
@@ -406,11 +433,7 @@ return View();
 
 
 
-        public ActionResult Subscribe(int id)
-        {
-            System.Web.HttpContext.Current.Session["bid"] = id;
-            return View();
-        }
+       
 
 
 
@@ -464,7 +487,7 @@ return View();
             }
             else
             {
-                Response.Redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Utils.WeHelper.appid + "&redirect_uri=http://test.aba0.cn/home/Login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
+                Response.Redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Utils.WeHelper.appid + "&redirect_uri=http://iapm.cjoy.cn/home/Login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
             }
             //AppID(应用ID)wxa25b827fd42bdf7f
             //AppSecret(应用密钥)00639e0733e2c80d822ccd6a3cbdac51
@@ -519,17 +542,7 @@ return View();
             o["signature"] = Utils.WeHelper.kqsignature;
 
             ViewBag.cardExt = o.ToJson();
-
-
-
-
-
-
-
-
-
-
-
+            
             return View();
         }
         public ActionResult EnOk(string id)
@@ -718,7 +731,18 @@ return View();
 
 
 
-            ViewBag.fee = ac.gardenFee;
+            int? totalCount = db.ActiveGardens.Where(t => t.OpenId == ac.OpenId && t.cdate.Equals(DateTime.Today)).Sum(s => s.gardenFee);
+
+
+            if (totalCount <= 200)
+            {
+                ViewBag.fee = ac.gardenFee;
+            }
+            else
+            {
+                ac.gardenFee = 5;
+                ViewBag.fee = 5;
+            }
 
 
             int jfk = rd.Next(1, 100);
