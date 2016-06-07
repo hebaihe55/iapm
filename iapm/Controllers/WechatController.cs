@@ -93,7 +93,7 @@ namespace iapm.Controllers
                 if (WPD.GetValue("EventKey").ToString() == "bcyh")
                 {
 
-                    string rexm1 = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId><![CDATA[ap_ObbvMyKJD6qJ_fBooNA_1wVSwLmJutGEgLEUkDr0mDa0bOf_b9njuBYoJXKZ2]]></MediaId></Image></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
+                    string rexm1 = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId><![CDATA[LweBjv133ww2zGCEtsaCRocqRn-RLhfTiE8uLPMIw4zCgKlFuwaGcbFGMAhvZxv-]]></MediaId></Image></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
 
 
                     Response.Write(rexm1);
@@ -102,7 +102,7 @@ namespace iapm.Controllers
                 else if (WPD.GetValue("EventKey").ToString() == "yaoyiyao")
                 {
 
-                    string rexm1 = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId><![CDATA[poWp7dTQd6UGCAmjOcIR__Ux32iZFj0qcGgdDA95q2fb7P66iaeZBavvIFlXL7Gn]]></MediaId></Image></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
+                    string rexm1 = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId><![CDATA[LweBjv133ww2zGCEtsaCRocqRn-RLhfTiE8uLPMIw4zCgKlFuwaGcbFGMAhvZxv-]]></MediaId></Image></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
 
 
                     Response.Write(rexm1);
