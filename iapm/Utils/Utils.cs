@@ -21,6 +21,8 @@ namespace iapm.Utils
             TimeSpan toNow = new TimeSpan(lTime); return dtStart.Add(toNow);
         }
 
+        
+
 
 
          public static double GetShortDistance(double lon1, double lat1, double lon2, double lat2)

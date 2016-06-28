@@ -335,7 +335,7 @@ return View();
             return View(q.OrderBy(o => o.flag).ToList());
         }
 
-
+        private Random rd;
 
         public ActionResult Game()
         {
@@ -355,7 +355,10 @@ return View();
 
             ac.ctime = ac.cdate = DateTime.Now;
 
-            Random rd = new Random();
+            if (rd == null)
+            {
+                rd = new Random();
+            }
 
             int minj = 0;
             int maxj = 0;
@@ -376,7 +379,12 @@ return View();
 
             ac.gardenType = "普通";
 
+           
+
+
+            //当天摇到的分数
             int? totalCount = db.ActiveGardens.Where(t => t.OpenId == ac.OpenId && t.cdate.Equals(DateTime.Today)).Sum(s => s.gardenFee).GetValueOrDefault(0);
+
 
 
             if (totalCount <= 200)
@@ -385,11 +393,18 @@ return View();
             }
             else
             {
-                ac.gardenFee = 5;
-                ViewBag.fee = 5;
+                ac.gardenFee = 10;
+                ViewBag.fee = 10;
             }
 
-            
+            //历史分数
+            int? hisCount = db.Cards.Where(t => t.CardFee >= 2000 && t.OpenId == ac.OpenId).Sum(s => s.CardFee).GetValueOrDefault(0);
+
+            if (hisCount >= 4000)
+            {
+                ac.gardenFee = 10;
+                ViewBag.fee = 10;
+            }
 
 
             int jfk = rd.Next(1, 100);
@@ -498,8 +513,19 @@ return View();
 
         }
 
-      
 
+        public ActionResult addCard(string id)
+        {
+            Ticket card = db.Tickets.SingleOrDefault(t => t.card_id == id);
+
+            Card c = new Card();
+            c.CardId = card.card_id;
+            c.CardFee = card.iconcount;
+            c.CardType = "领取";
+            c.OpenId= System.Web.HttpContext.Current.Session["uid"].ToString();
+
+            return RedirectToAction("Prize");
+        }
 
         public ActionResult Ok(string id)
         {
@@ -707,8 +733,10 @@ return View();
 
             ac.ctime = ac.cdate = DateTime.Now;
 
-            Random rd = new Random();
-
+            if (rd == null)
+            {
+                rd = new Random();
+            }
             int minj = 0;
             int maxj = 0;
 
@@ -728,7 +756,7 @@ return View();
 
             ac.gardenType = "普通";
 
-
+          
 
 
             int? totalCount = db.ActiveGardens.Where(t => t.OpenId == ac.OpenId && t.cdate.Equals(DateTime.Today)).Sum(s => s.gardenFee);
@@ -744,6 +772,13 @@ return View();
                 ViewBag.fee = 5;
             }
 
+            int? hisCount = db.Cards.Where(t => t.CardFee >= 2000 && t.OpenId == ac.OpenId).Sum(s => s.CardFee).GetValueOrDefault(0);
+
+            if (hisCount >= 4000)
+            {
+                ac.gardenFee = 10;
+                ViewBag.fee = 10;
+            }
 
             int jfk = rd.Next(1, 100);
 
