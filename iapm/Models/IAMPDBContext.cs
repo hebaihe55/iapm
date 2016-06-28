@@ -19,5 +19,6 @@ namespace iapm.Models
         public DbSet<ActiveGarden> ActiveGardens { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Card> Cards { get; set; }
+        public DbSet<ImgManager> ImgManagers { get; set; }
     }
 }

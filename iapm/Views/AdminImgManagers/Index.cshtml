@@ -1,0 +1,58 @@
+﻿@model IEnumerable<iapm.Models.ImgManager>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imgurl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgsize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pagename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cctime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgurl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgsize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pagename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cctime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

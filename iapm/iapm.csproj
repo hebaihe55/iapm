@@ -922,6 +922,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminImgManagersController.cs" />
     <Compile Include="Controllers\AdminTicketsController.cs" />
     <Compile Include="Controllers\AdminUsersController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -946,6 +947,7 @@
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\IAMPDBContext.cs" />
     <Compile Include="Models\Ibeacon.cs" />
+    <Compile Include="Models\ImgManager.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="Models\Ticket.cs" />
@@ -1101,6 +1103,11 @@
     <Content Include="Views\Home\EnBuGou.cshtml" />
     <Content Include="Views\Home\EnOk.cshtml" />
     <Content Include="Views\Home\Subview.cshtml" />
+    <Content Include="Views\AdminImgManagers\Create.cshtml" />
+    <Content Include="Views\AdminImgManagers\Delete.cshtml" />
+    <Content Include="Views\AdminImgManagers\Details.cshtml" />
+    <Content Include="Views\AdminImgManagers\Edit.cshtml" />
+    <Content Include="Views\AdminImgManagers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
