@@ -10,7 +10,7 @@ using iapm.Models;
 
 namespace iapm.Controllers
 {
-    public class AdminImgManagersController : Controller
+    public class AdminImgManagersController :BaseController
     {
         private IAMPDBContext db = new IAMPDBContext();
 
@@ -78,10 +78,19 @@ namespace iapm.Controllers
         // 详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,imgurl,imgname,imgsize,pagename,cctime")] ImgManager imgManager)
+        public ActionResult Edit([Bind(Include = "id,imgurl,imgname,imgsize,pagename,cctime")] ImgManager imgManager,HttpPostedFileBase img)
         {
             if (ModelState.IsValid)
             {
+                if (img!=null && img.ContentLength != 0)
+                {
+                    string serpath = Server.MapPath("~/updata/");
+                    string imgpath = DateTime.Now.ToString("yyyyMMddHHmmssfff") + img.FileName;
+                    img.SaveAs(serpath + imgpath);
+                    imgManager.imgurl = "/updata/" + imgpath;
+
+                }
+
                 db.Entry(imgManager).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

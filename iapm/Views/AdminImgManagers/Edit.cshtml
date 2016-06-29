@@ -8,7 +8,7 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "AdminImgManagers", FormMethod.Post,new { enctype = "multipart/form-data" }) )
 {
     @Html.AntiForgeryToken()
     
@@ -21,10 +21,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.imgurl, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.imgurl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.imgurl, "", new { @class = "text-danger" })
+               
+               <img src='@Model.imgurl' />
+                
+                 @Html.ValidationMessageFor(model => model.imgurl, "", new { @class = "text-danger" })
             </div>
         </div>
+        <input type="hidden" name="imgurl" value="@Model.imgurl" />
+        <input type="file" name="img" />
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.imgname, htmlAttributes: new { @class = "control-label col-md-2" })

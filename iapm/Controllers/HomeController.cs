@@ -17,6 +17,8 @@ namespace iapm.Controllers
         private Models.IAMPDBContext db = new Models.IAMPDBContext();
         // GET: Home
 
+        private static List<ImgManager> imglist;
+
         public ActionResult Subscribe(int id)
         {
             System.Web.HttpContext.Current.Session["bid"] = id;
@@ -84,7 +86,16 @@ namespace iapm.Controllers
 
         public ActionResult Index()
         {
-            
+            imglist = db.ImgManagers.ToList();
+
+
+            ViewBag.img1 = imglist.ToList()[0].imgurl;
+            ViewBag.img2 = imglist.ToList()[1].imgurl;
+            ViewBag.img3 = imglist.ToList()[2].imgurl;
+            ViewBag.img4 = imglist.ToList()[3].imgurl;
+            ViewBag.img5 = imglist.ToList()[4].imgurl;
+            ViewBag.img6 = imglist.ToList()[5].imgurl;
+
             return View();
         }
         public ActionResult NoIndex()
@@ -94,7 +105,10 @@ namespace iapm.Controllers
         }
         public ActionResult Rule()
         {
-            
+            imglist = db.ImgManagers.ToList();
+
+
+            ViewBag.img1 = imglist.ToList()[8].imgurl;
             return View();
         }
         public ActionResult Rulebake1()
@@ -245,7 +259,13 @@ return View();
         public ActionResult GameBegin()
         {
 
-           
+            imglist = db.ImgManagers.ToList();
+
+
+            ViewBag.img1 = imglist.ToList()[6].imgurl;
+          
+
+
             return View();
         }
         public ActionResult PrizeDetail(int? id)
@@ -429,7 +449,10 @@ return View();
                 ViewBag.fee = 0;
             }
 
+            imglist = db.ImgManagers.ToList();
 
+
+            ViewBag.img1 = imglist.ToList()[7].imgurl;
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();

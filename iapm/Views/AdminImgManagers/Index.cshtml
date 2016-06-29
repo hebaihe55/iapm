@@ -5,27 +5,25 @@
     Layout = "~/Views/_LayoutPage.cshtml";
 }
 
-<h2>Index</h2>
+<h2>样式管理</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.imgurl)
+         图片
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.imgname)
+            图片名
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.imgsize)
+           图片尺寸（宽*高）
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.pagename)
+            所属页面
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cctime)
+           时间
         </th>
         <th></th>
     </tr>
@@ -33,7 +31,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.imgurl)
+         <img src="@item.imgurl" style="width:200px; height:100px;" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.imgname)
@@ -49,8 +47,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+    
         </td>
     </tr>
 }
