@@ -21,6 +21,14 @@ namespace iapm.Controllers
 
         public ActionResult Subscribe(int id)
         {
+
+            //if (DateTime.Now > DateTime.Parse("2016-07-17 23:59:59"))
+            //{
+            //    return RedirectToAction("gameover");
+            //}
+
+
+
             System.Web.HttpContext.Current.Session["bid"] = id;
 
 
@@ -86,6 +94,8 @@ namespace iapm.Controllers
 
         public ActionResult Index()
         {
+
+
             imglist = db.ImgManagers.ToList();
 
 
@@ -96,6 +106,10 @@ namespace iapm.Controllers
             ViewBag.img5 = imglist.ToList()[4].imgurl;
             ViewBag.img6 = imglist.ToList()[5].imgurl;
 
+            return View();
+        }
+        public ActionResult Index1()
+        {
             return View();
         }
         public ActionResult NoIndex()
@@ -356,6 +370,12 @@ return View();
         }
 
         private Random rd;
+
+        public ActionResult GameOver()
+        {
+            return View();
+
+        }
 
         public ActionResult Game()
         {
