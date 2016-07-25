@@ -14,12 +14,12 @@ ol li{
 .bg1{ background:#fff7e5;}
 .bg2{ background:url(../images/ico3.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
 .bg3{ background-color: #fdf9e3 ; background-size:100% auto;}
-.bg4{ background:url(../images/ico19.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
+.bg4{ background:url(../images/ico19.png) no-repeat; background-size:100% auto;}
 .bg5{ background:url(../images/ico30.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
 .bg6{ background:url(../images/ico31.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
 
 .wrap{ max-width:640px; min-width:320px; margin:0 auto; padding:0; position:relative;}
-.head{ background:#ead7b5; padding:1.2% 0; text-align:center;}
+.head{ background:#b3cdb8; padding:1.2% 0; text-align:center;}
 .head h3{position:relative;}
 .head h3 img{width:22.267%;}
 .head a{position:absolute; width:10.67%; right:3.125%;}
@@ -79,11 +79,11 @@ ol li{
 
 /*故事开始*/
 .storyBegin{ margin:0 15%;}
-
-.doMore{ text-align:left;}
+.storyBegin img.word{margin-left:50px;width:30%}
+.doMore{ text-align:center;margin-bottom:150px}
 .doMore img{ width:29%;}
 .doMore a{ margin:0 15%;}
-.agreeIt{ text-align:center; line-height:40px; margin-top:30px;}
+.agreeIt{ text-align:center; line-height:40px; margin-top:120px;margin:0 auto}
 .agreeIt span{ background:url(../images/ico20.png); font-size:14px; padding:0 10px; color:#7f6d59; display:inline-block;}
 .agreeIt input{ margin-right:5px; padding:3px; vertical-align:middle;}
 .agreediv,.agreediv2{width:180px;height:106px;position:absolute;left:27%;top:36%;text-align:center;z-index:4;background:white;display:none;border:1px solid gray;border-radius:10px;text-align:center;}
