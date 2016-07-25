@@ -362,7 +362,7 @@ return View();
 
 
            
-            return View(q.OrderBy(o => o.flag).ToList());
+            return View(q.OrderBy(o => o.iconcount).ToList());
         }
 
         private Random rd;
@@ -922,7 +922,7 @@ return View();
 
           
 
-            return View(q.OrderBy(o => o.flag).ToList());
+            return View(q.OrderBy(o => o.iconcount).ToList());
         }
 
 
