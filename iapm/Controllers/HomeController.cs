@@ -22,6 +22,12 @@ namespace iapm.Controllers
         public ActionResult Subscribe(int id)
         {
 
+
+            if (id != 22)
+            {
+                return RedirectToAction("gameover");
+            }
+
             //if (DateTime.Now > DateTime.Parse("2016-07-17 23:59:59"))
             //{
             //    return RedirectToAction("gameover");
