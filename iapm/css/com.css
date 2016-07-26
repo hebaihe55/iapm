@@ -19,12 +19,13 @@ ol li{
 .bg6{ background:url(../images/ico31.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
 
 .wrap{ max-width:640px; min-width:320px; margin:0 auto; padding:0; position:relative;}
+.wrap img{width:100%;}
 .head{ background:#b3cdb8; padding:1.2% 0; text-align:center;}
 .head h3{position:relative;}
 .head h3 img{width:22.267%;}
 .head a{position:absolute; width:10.67%; right:3.125%;}
 .head h3 a img{width:100%;}
-
+.gameMap img{width:100%;}
 /*兑换*/
 .userInfo{ color:#8d7d6b; padding:20px 0; margin:0 4%;}
 .userInfo h3{ font-size:18px;}
