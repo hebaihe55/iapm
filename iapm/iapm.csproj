@@ -1106,7 +1106,6 @@
     <Content Include="Views\Home\Short.cshtml" />
     <Content Include="Views\Home\EnNoIndex.cshtml" />
     <Content Include="Views\Home\EnRulebake.cshtml" />
-    <Content Include="Views\Home\Rulebake1.cshtml" />
     <Content Include="Views\Home\TiaoKuanBake.cshtml" />
     <Content Include="Views\Home\EnTiaoKuanBake.cshtml" />
     <Content Include="Views\Home\BuGou.cshtml" />
