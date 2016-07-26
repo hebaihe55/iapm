@@ -768,99 +768,99 @@ return View();
         public ActionResult EnGame()
         {
             //根据ibeacon 的id查询
-            var ibeacon = db.Ibeacons.Find(System.Web.HttpContext.Current.Session["bid"]);
+            //var ibeacon = db.Ibeacons.Find(System.Web.HttpContext.Current.Session["bid"]);
 
-            iapm.Models.ActiveGarden ac = new Models.ActiveGarden();
+            //iapm.Models.ActiveGarden ac = new Models.ActiveGarden();
 
-            //获取用户id
-            ac.OpenId = System.Web.HttpContext.Current.Session["uid"].ToString();
+            ////获取用户id
+            //ac.OpenId = System.Web.HttpContext.Current.Session["uid"].ToString();
 
-            ViewBag.uid = ac.OpenId;
+            //ViewBag.uid = ac.OpenId;
 
-            ac.Ibeaconid = ibeacon.Ibeaconid;
+            //ac.Ibeaconid = ibeacon.Ibeaconid;
 
-            ViewBag.bid = ac.Ibeaconid;
+            //ViewBag.bid = ac.Ibeaconid;
 
-            ac.ctime = ac.cdate = DateTime.Now;
+            //ac.ctime = ac.cdate = DateTime.Now;
 
-            if (rd == null)
-            {
-                rd = new Random();
-            }
-            int minj = 0;
-            int maxj = 0;
+            //if (rd == null)
+            //{
+            //    rd = new Random();
+            //}
+            //int minj = 0;
+            //int maxj = 0;
 
-            //在双倍积分时间内积分 * 2
-            if (DateTime.Now >= ibeacon.dbtime && DateTime.Now <= ibeacon.detime)
-            {
-                maxj = ibeacon.maxifen * 2;
-                minj = ibeacon.minifen * 2;
-            }
-            else
-            {
-                maxj = ibeacon.maxifen;
-                minj = ibeacon.minifen;
-            }
+            ////在双倍积分时间内积分 * 2
+            //if (DateTime.Now >= ibeacon.dbtime && DateTime.Now <= ibeacon.detime)
+            //{
+            //    maxj = ibeacon.maxifen * 2;
+            //    minj = ibeacon.minifen * 2;
+            //}
+            //else
+            //{
+            //    maxj = ibeacon.maxifen;
+            //    minj = ibeacon.minifen;
+            //}
 
-            ac.gardenFee = rd.Next(minj, minj);
+            //ac.gardenFee = rd.Next(minj, minj);
 
-            ac.gardenType = "普通";
+            //ac.gardenType = "普通";
 
           
 
 
-            int? totalCount = db.ActiveGardens.Where(t => t.OpenId == ac.OpenId && t.cdate.Equals(DateTime.Today)).Sum(s => s.gardenFee);
+            //int? totalCount = db.ActiveGardens.Where(t => t.OpenId == ac.OpenId && t.cdate.Equals(DateTime.Today)).Sum(s => s.gardenFee);
 
 
-            if (totalCount <= 200)
-            {
-                ViewBag.fee = ac.gardenFee;
-            }
-            else
-            {
-                ac.gardenFee = 5;
-                ViewBag.fee = 5;
-            }
+            //if (totalCount <= 200)
+            //{
+            //    ViewBag.fee = ac.gardenFee;
+            //}
+            //else
+            //{
+            //    ac.gardenFee = 5;
+            //    ViewBag.fee = 5;
+            //}
 
-            int? hisCount = db.Cards.Where(t => t.CardFee >= 2000 && t.OpenId == ac.OpenId).Sum(s => s.CardFee).GetValueOrDefault(0);
+            //int? hisCount = db.Cards.Where(t => t.CardFee >= 2000 && t.OpenId == ac.OpenId).Sum(s => s.CardFee).GetValueOrDefault(0);
 
-            if (hisCount >= 4000)
-            {
-                ac.gardenFee = 10;
-                ViewBag.fee = 10;
-            }
+            //if (hisCount >= 4000)
+            //{
+            //    ac.gardenFee = 10;
+            //    ViewBag.fee = 10;
+            //}
 
-            int jfk = rd.Next(1, 100);
+            //int jfk = rd.Next(1, 100);
 
-            int jfkTag = 0;
+            //int jfkTag = 0;
 
-            if (jfk <= ibeacon.dfen)
-            {
-                jfkTag = 1;
-            }
+            //if (jfk <= ibeacon.dfen)
+            //{
+            //    jfkTag = 1;
+            //}
 
-            ViewBag.jfkTag = jfkTag;
+            //ViewBag.jfkTag = jfkTag;
 
-            try
-            {
-                db.ActiveGardens.Add(ac);
-                db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                Utils.Log.Error("Game", ex.Message);
-                ViewBag.fee = 0;
-            }
+            //try
+            //{
+            //    db.ActiveGardens.Add(ac);
+            //    db.SaveChanges();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utils.Log.Error("Game", ex.Message);
+            //    ViewBag.fee = 0;
+            //}
 
 
-            ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
-            Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
+            //ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
+            //Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
          
-            Utils.WeHelper.url = Request.Url.ToString();
+            //Utils.WeHelper.url = Request.Url.ToString();
 
-            ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
-            ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            ViewBag.signature = Utils.WeHelper.signature;
+            //ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
+            //ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            //ViewBag.signature = Utils.WeHelper.signature;
 
 
 
