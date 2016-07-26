@@ -14,9 +14,9 @@ ol li{
 .bg1{ background:#fff7e5;}
 .bg2{ background:url(../images/ico3.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
 .bg3{ background-color: #ddf4d7 ; background-size:100% auto;}
-.bg4{ background:url(../images/ico19.png) no-repeat; background-size:100% 130%;}
-.bg5{ background:url(../images/ico30.gif) no-repeat #fdf9e3 0; background-size:100% auto;}
-.bg6{ background:url(../images/ico31.png) no-repeat #fdf9e3 0 150px; background-size:100% auto;}
+.bg4{ background:url(../images/ico19.png) no-repeat #def4d6 0 150px; background-size:100% auto;}
+.bg5{ background:url(../images/ico30.gif) no-repeat #def4d6 0 150px; background-size:100% auto;}
+.bg6{ background:url(../images/ico31.png) no-repeat #def4d6 0 150px; background-size:100% auto;}
 
 .wrap{ max-width:640px; min-width:320px; margin:0 auto; padding:0; position:relative;}
 .wrap img{width:100%;}
