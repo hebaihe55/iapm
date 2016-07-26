@@ -131,7 +131,7 @@ z-index:2;
 
 @media (max-width: 320px){
 .bg2{ background:url(../images/ico3.png) no-repeat #fdf9e3 0 120px; background-size:100% auto;}
-.bg4{ background:url(../images/ico19.png) no-repeat 0 0; background-size:100% auto;}
+.bg4{ background:url(../images/ico19.png) no-repeat #def4d6 0 150px; background-size:100% auto;}
 .bg5{ background:url(../images/ico30.gif) no-repeat #def4d6 0 90px; background-size:100% auto;}
 .bg6{ background:url(../images/ico31.gif) no-repeat #def4d6 0 90px; background-size:100% auto;}
 
