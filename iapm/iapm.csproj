@@ -283,6 +283,7 @@
     <Content Include="images\astroboy-2.jpg" />
     <Content Include="images\back.png" />
     <Content Include="images\background.png" />
+    <Content Include="images\bg5.gif" />
     <Content Include="images\bg5.jpg" />
     <Content Include="images\bgbg.gif" />
     <Content Include="images\btn1.png" />
