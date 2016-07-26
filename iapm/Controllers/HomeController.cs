@@ -17,6 +17,7 @@ namespace iapm.Controllers
         private Models.IAMPDBContext db = new Models.IAMPDBContext();
         // GET: Home
 
+
         private static List<ImgManager> imglist;
 
         public ActionResult Subscribe(int id)
