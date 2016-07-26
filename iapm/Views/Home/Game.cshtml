@@ -33,7 +33,7 @@
         <img src="~/images/thanks.gif" style="position:absolute;bottom:300px; left:0; right:0; width:80%;height:auto; margin:auto;z-index:4;display:none;" class="kaquan"/>
         <div style="position:absolute;bottom:200px; left:0; right:0; width:40%;height:auto;margin:auto;z-index:4;display:none;" class="duihuang"><a href="/Home/Prize"><img src="/images/ico32.png" style="position:absolute;left:0;top:0;z-index:4;"></a></div>
         <div style="position:absolute;bottom:330px; left:0; right:0;bottom:310px; width:50%;height:auto;margin:auto;z-index:5;display:none;text-align:center;" class="mark">@if (@ViewBag.fee == 0) { <span style = "font-size:16px;color:red;  "> 该点位已摇过，<br />请至其它点位摇奖！</span > }
-        else {  <span style = "font-size:20px;color:red; margin-top:5px" >赢得: @ViewBag.fee 块曲奇</span >}</div>
+        else {  <span style = "font-size:20px;color:red; margin-top:5px" >赢得: @ViewBag.fee 积分</span >}</div>
 
     
 
@@ -151,7 +151,7 @@ var t = setInterval("timedCount()", 1000);
 
 
             wx.onMenuShareTimeline({
-                title: 'iapm摇曲奇 赢奖赏 等你来参加！', // 分享标题
+                title: 'iapm摇积分 赢奖赏 等你来参加！', // 分享标题
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
 
@@ -166,8 +166,8 @@ var t = setInterval("timedCount()", 1000);
 
 
             wx.onMenuShareAppMessage({
-                title: 'iapm摇曲奇 赢奖赏 等你来参加！', // 分享标题
-                desc: '我在iapm摇曲奇 赢奖赏 等你来参加！', // 分享描述
+                title: 'iapm摇积分 赢奖赏 等你来参加！', // 分享标题
+                desc: '我在iapm摇积分 赢奖赏 等你来参加！', // 分享描述
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
                 type: '', // 分享类型,music、video或link，不填默认为link
