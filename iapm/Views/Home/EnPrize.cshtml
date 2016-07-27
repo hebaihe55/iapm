@@ -20,7 +20,7 @@
         <header class="head clearfix">
             <h3><a href="/home/EnIndex" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /><a href="/home/EnIndex"><img src="/images/back.png" /></a></h3>
         </header>
-        <h6>Cumulative：@ViewBag.totalCount</h6>
+        <h6>Cumulative Points：@ViewBag.totalCount</h6>
         <div class="prize">
             
             <h3><img src="/images/enico21.png" /><br />Limited quota while stocks last, first-come-first-served basis<br /> The redeemed gift(s) or coupon(s) cannot be returned.
@@ -37,8 +37,7 @@
                             @Html.DisplayFor(modelItem => item.entitle)
                         </p>
 
-
-                        <p  class="p2"> @Html.DisplayFor(modelItem => item.iconcount) coins</p>
+                        <p  class="p2"> @Html.DisplayFor(modelItem => item.iconcount) points</p>
                   
                     </div>
                     <div class="number">
