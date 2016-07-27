@@ -96,11 +96,11 @@ var t = setInterval("timedCount()", 1000);
                 //获得当前时间戳
                 var curTime = new Date().getTime();
 
-                        if ((curTime - lastUpdate) > 100) {
+                        if ((curTime - lastUpdate) > 500) {
 
                             //时间差
                             var diffTime = curTime - lastUpdate;
-                lastUpdate = curTime;
+                            lastUpdate = curTime;
 
 
                             //x轴加速度
@@ -113,11 +113,11 @@ var t = setInterval("timedCount()", 1000);
                             var speed = Math.abs(curShakeX + curShakeY + curShakeZ - lastShakeX - lastShakeY - lastShakeZ) / diffTime * 10000;
 
                             if (speed > shakeThreshold) {
-	            //TODO 相关方法，比如：
+	                    //TODO 相关方法，比如：
 
-	            //播放音效
+	                    //播放音效
 
-	            $("#jb").attr("src", "/images/a.gif");
+	                    $("#jb").attr("src", "/images/a.gif");
 
             }
                             else {
