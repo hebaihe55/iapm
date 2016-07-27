@@ -1117,6 +1117,7 @@
     <Content Include="Views\AdminImgManagers\Edit.cshtml" />
     <Content Include="Views\AdminImgManagers\Index.cshtml" />
     <Content Include="Views\Home\GameOver.cshtml" />
+    <Content Include="Views\Home\Rulebake1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
