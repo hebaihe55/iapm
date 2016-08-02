@@ -82,7 +82,7 @@ namespace iapm.Controllers
             {
 
 
-                string rexm = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[感谢关注iapm商场官方微信，即日起凭本迎新信息当日至商场LG2礼宾台，即有机会赢取Snoopy文具壹份。数量有限，先到先得，送完即止。活动期间，每人限领一次。]]></Content></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
+                string rexm = string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[感谢关注iapm商场官方微信：）即日起至9月4日，凭本迎新信息当日至商场LG2礼宾台，即可换领《我们诞生在中国》电影海报一张。每人活动期限限领一次，数量有限，先到先得。]]></Content></xml>", WPD.GetValue("FromUserName").ToString(), WPD.GetValue("ToUserName").ToString());
 
 
                 Response.Write(rexm);

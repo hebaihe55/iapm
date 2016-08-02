@@ -24,10 +24,10 @@ namespace iapm.Controllers
         {
 
 
-            if (id != 22)
-            {
-                return RedirectToAction("gameover");
-            }
+            //if (id != 22)
+            //{
+            //    return RedirectToAction("gameover");
+            //}
 
             //if (DateTime.Now > DateTime.Parse("2016-07-17 23:59:59"))
             //{
@@ -426,7 +426,7 @@ return View();
 
             ac.gardenType = "普通";
 
-           
+
 
 
             //当天摇到的分数
@@ -440,8 +440,9 @@ return View();
             }
             else
             {
-                ac.gardenFee = 10;
-                ViewBag.fee = 10;
+                //ac.gardenFee = 10;
+                //ViewBag.fee = 10;
+                ViewBag.fee = ac.gardenFee;
             }
 
             //历史分数
@@ -787,6 +788,7 @@ return View();
             {
                 rd = new Random();
             }
+
             int minj = 0;
             int maxj = 0;
 
@@ -809,7 +811,9 @@ return View();
 
 
 
-            int? totalCount = db.ActiveGardens.Where(t => t.OpenId == ac.OpenId && t.cdate.Equals(DateTime.Today)).Sum(s => s.gardenFee);
+            //当天摇到的分数
+            int? totalCount = db.ActiveGardens.Where(t => t.OpenId == ac.OpenId && t.cdate.Equals(DateTime.Today)).Sum(s => s.gardenFee).GetValueOrDefault(0);
+
 
 
             if (totalCount <= 200)
@@ -818,10 +822,12 @@ return View();
             }
             else
             {
-                ac.gardenFee = 5;
-                ViewBag.fee = 5;
+                //ac.gardenFee = 10;
+                //ViewBag.fee = 10;
+                ViewBag.fee = ac.gardenFee;
             }
 
+            //历史分数
             int? hisCount = db.Cards.Where(t => t.CardFee >= 2000 && t.OpenId == ac.OpenId).Sum(s => s.CardFee).GetValueOrDefault(0);
 
             if (hisCount >= 4000)
@@ -829,6 +835,7 @@ return View();
                 ac.gardenFee = 10;
                 ViewBag.fee = 10;
             }
+
 
             int jfk = rd.Next(1, 100);
 
@@ -852,6 +859,10 @@ return View();
                 ViewBag.fee = 0;
             }
 
+            imglist = db.ImgManagers.ToList();
+
+
+            ViewBag.img1 = imglist.ToList()[7].imgurl;
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();
@@ -861,6 +872,7 @@ return View();
             ViewBag.timestamp = Utils.WeHelper.timestamp = Utils.Utils.ConvertDateTimeInt(DateTime.Now).ToString();
             ViewBag.nonceStr = Utils.WeHelper.noncestr = "iapm" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
             ViewBag.signature = Utils.WeHelper.signature;
+
 
 
 
