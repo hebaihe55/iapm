@@ -448,7 +448,7 @@ return View();
             //历史分数
             int? hisCount = db.Cards.Where(t => t.CardFee >= 2000 && t.OpenId == ac.OpenId).Sum(s => s.CardFee).GetValueOrDefault(0);
 
-            if (hisCount >= 4000)
+            if (hisCount >= 500)
             {
                 ac.gardenFee = 10;
                 ViewBag.fee = 10;
@@ -830,7 +830,7 @@ return View();
             //历史分数
             int? hisCount = db.Cards.Where(t => t.CardFee >= 2000 && t.OpenId == ac.OpenId).Sum(s => s.CardFee).GetValueOrDefault(0);
 
-            if (hisCount >= 4000)
+            if (hisCount >= 500)
             {
                 ac.gardenFee = 10;
                 ViewBag.fee = 10;
