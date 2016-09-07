@@ -112,6 +112,8 @@ namespace iapm.Controllers
             ViewBag.img4 = imglist.ToList()[3].imgurl;
             ViewBag.img5 = imglist.ToList()[4].imgurl;
             ViewBag.img6 = imglist.ToList()[5].imgurl;
+            ViewBag.img11 = imglist.ToList()[11].imgurl;
+            ViewBag.img12 = imglist.ToList()[12].imgurl;
 
             return View();
         }
@@ -161,8 +163,13 @@ namespace iapm.Controllers
 
         public ActionResult L1()
         {
+            imglist = db.ImgManagers.ToList();
+
 
           
+            ViewBag.img11 = imglist.ToList()[11].imgurl;
+            ViewBag.img12 = imglist.ToList()[12].imgurl;
+
             return View();
         }
         public ActionResult L2()
@@ -761,8 +768,13 @@ return View();
 
         public ActionResult EnGameBegin()
         {
+            imglist = db.ImgManagers.ToList();
 
-           
+
+            ViewBag.img1 = imglist.ToList()[6].imgurl;
+
+
+
             return View();
         }
 
