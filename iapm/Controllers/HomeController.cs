@@ -167,8 +167,8 @@ namespace iapm.Controllers
 
 
           
-            ViewBag.img11 = imglist.ToList()[11].imgurl;
-            ViewBag.img12 = imglist.ToList()[12].imgurl;
+            ViewBag.img11 = imglist.ToList()[10].imgurl;
+            ViewBag.img12 = imglist.ToList()[11].imgurl;
 
             return View();
         }
@@ -488,6 +488,14 @@ return View();
 
 
             ViewBag.img1 = imglist.ToList()[7].imgurl;
+
+
+
+            ViewBag.img9 = imglist.ToList()[9].imgurl;
+
+            ViewBag.img10 = imglist.ToList()[10].imgurl;
+            ViewBag.img11 = imglist.ToList()[11].imgurl;
+            ViewBag.img12 = imglist.ToList()[12].imgurl;
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();

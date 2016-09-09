@@ -15,14 +15,14 @@
 <body >
     <div class="wrap">
         <header class="head clearfix">
-            <h3><a href="/home/Index" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /></h3>
+            <h3><a href="/home/Index" style="position:absolute; left:-300px; top:6px;"><img src="@ViewBag.img10" /></a><img src="/images/logo.png" /></h3>
         </header>
         <div style="position:relative; background:url('@ViewBag.img1') no-repeat #def4d6 0 0px;background-size: 100% auto; height:100%; padding-left:30px"  >
           <div style="width:200px;font-size:18px; margin-top:10px;float:left;">倒计时：<label id="seconds">10</label>秒</div>
            
                 
             <div>
-                <img id="jb" src="~/images/jb.png" style="margin-top:100px;" />
+                <img id="jb" src="@ViewBag.img12" style="margin-top:100px;" />
             </div>
          
         </div>
@@ -63,7 +63,7 @@ var t = setInterval("timedCount()", 1000);
                                     $(".kaquan").fadeIn();
                                     $(".duihuang").fadeIn();
                                     $(".mark").fadeIn();
-                $("#jb").attr("src", "/images/jb.png");
+                                    $("#jb").attr("src", "@ViewBag.img12");
                 $("#jifen").show();
 
 
@@ -120,11 +120,11 @@ var t = setInterval("timedCount()", 1000);
 
 	                    //播放音效
 
-	                    $("#jb").attr("src", "/images/a.gif");
+                                $("#jb").attr("src", "@ViewBag.img9");
 
             }
                             else {
-	            $("#jb").attr("src", "/images/jb.png");
+                                $("#jb").attr("src", "@ViewBag.img12");
         }
 
         lastShakeX = curShakeX;
