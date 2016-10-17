@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>首页</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body style="background:url('/images/bgbgbg.jpg') no-repeat 0 45px; background-size:100% auto;background-color:#E4D1A8;">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3>
+                <img src="~/images/ifc 209 x 100.png" />
+              </h3>
+        </header>
+        <!--兑换券-->
+        <div class="storyBegin">          
+            <p><img class="word" src="http://ifc.cjoy.cn/@ViewBag.img6"></p>
+        </div>
+        <div class="doMore">
+            <a href="javascript:void(0)" onclick="agree()"><img src="http://ifc.cjoy.cn/@ViewBag.img2"></a><br />
+            <a href="/home/rule"><img src="http://ifc.cjoy.cn/@ViewBag.img3"></a><br/>
+            <a href="/home/gamemap"><img src="http://ifc.cjoy.cn/@ViewBag.img4"></a><br />
+            <a href="/home/prize"><img src="http://ifc.cjoy.cn/@ViewBag.img5"></a>
+        </div> 
+  <div class="agreediv">
+            <p>请同意条款!</p>
+            <input type="button" value="确定" class="sure"/>
+      </div><div class="agreeIt"><span><label><input type="checkbox" id="agree" /><a href="/Home/TiaoKuan"> 同意相关条款</a></label></span></div>
+    </div>
+    <div class="backdiv"></div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        function agree() {
+            if ($("#agree").attr("checked")) {
+                location.href = "/home/Gamebegin";
+            }
+            else {
+                $(".backdiv").show();
+                $(".agreediv").show();
+            }
+            $(".agreediv .sure").on("click", function () {
+                $(".agreediv").hide();
+                $(".backdiv").hide();
+
+            })
+        }
+
+
+    </script>
+
+</body>
+</html>
+

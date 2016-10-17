@@ -1,0 +1,66 @@
+﻿@model iapm.Models.Report1
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Report1</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.R1date)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R1date)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R1pnum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R1pnum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R1cnum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R1cnum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R1dianji)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R1dianji)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R1cishu)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R1cishu)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Report1id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

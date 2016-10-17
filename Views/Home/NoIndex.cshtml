@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>分享页</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+  
+</head>
+<body style="background:url('/images/bgbgbg.jpg') no-repeat 0 45px; background-size:100% auto;background-color:#E4D1A8;">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3>
+                <img src="~/images/ifc 209 x 100.png" />
+            </h3>
+        </header>
+        <!--兑换券-->
+        <div class="storyBegin">
+            <p>
+                <img src="~/images/yuanquan_03.png" class="word"/></p>
+        </div>
+        <div class="doMore">
+            <a href="#"><img src="~/images/huianniu_01.png" /></a><br />
+            <a href="/home/Rulebake"><img src="~/images/anniu_02.png" /></a><br />
+            <a href="#"><img src="~/images/huianniu_03.png" /></a><br />
+            <a href="#"><img src="~/images/huianniu_04.png" /></a>
+        </div>
+    </div>
+    <div class="backdiv"></div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        function agree() {
+            if ($("#agree").attr("checked")) {
+                location.href = "/home/Gamebegin";
+            }
+            else {
+                $(".backdiv").show();
+                $(".agreediv").show();
+            }
+            $(".agreediv .sure").on("click", function () {
+                $(".agreediv").hide();
+                $(".backdiv").hide();
+
+            })
+        }
+    </script>
+</body>
+</html>
+

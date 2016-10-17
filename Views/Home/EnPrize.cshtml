@@ -1,0 +1,59 @@
+﻿@model IEnumerable<iapm.Models.VTicket>
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>Redemption</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body class="bg3">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3><a href="/home/EnIndex" style="position:absolute; left:-300px; top:6px;">
+                <img src="~/images/home.png" /></a><img src="~/images/ifc 209 x 100.png" /><a href="/home/EnIndex"><img src="/images/back.png" /></a></h3>
+        </header>
+        <h6>Cumulative：@ViewBag.totalCount</h6>
+        <div class="prize">
+            
+            <h3><img src="/images/enico21.png" /><br />Limited quota while stocks last, first-come-first-served basis<br /> The redeemed gift(s) or coupon(s) cannot be returned.
+</h3>
+            <ul>
+
+@foreach (var item in Model)
+{
+                <li>
+                    <div class="prizePic">
+                    
+                        <div><a href="/Home/EnPrizeDetail/@Html.DisplayFor(modelItem => item.Ticketid)"><img src='@Html.DisplayFor(modelItem => item.detailImg)'/></a></div>
+                        <p class="p1">
+                            @Html.DisplayFor(modelItem => item.entitle)
+                        </p>
+
+
+                        <p  class="p2"> @Html.DisplayFor(modelItem => item.iconcount) coins</p>
+                  
+                    </div>
+                    <div class="number">
+                        <span>amount:@Html.DisplayFor(modelItem => item.quantity)/Remain:@item.kqleft</span>
+                        <p><a href="/home/Enok/@item.card_id"><img src="/images/enico27.png"></a></p>
+                    </div>
+                </li>
+            
+}
+
+
+            </ul>
+        </div>
+    </div>
+   
+</body>
+</html>

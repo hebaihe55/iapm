@@ -1,0 +1,36 @@
+﻿@model iapm.Models.Ticket
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>Prize Detail</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bg3">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3><a href="/home/EnIndex" style="position:absolute; left:-300px; top:6px;"><img src="~/images/home.png" /></a><img src="~/images/ifc 209 x 100.png" /><a href="/home/Enprize"><img src="/images/back.png" /></a></h3>
+        </header>
+        <div class="prizeDetail">
+          
+            <div><img src="@Html.DisplayFor(model => model.detailImg)" style="width:100%"></div>
+            
+            <div style="text-align:left;margin-left:3%"><h4 style="font-size:36px">@Html.DisplayFor(model => model.entitle)</h4></div>
+            <div style="text-align:left;margin-left:3%"><p>Gold coins: @Model.iconcount  Remain：@ViewBag.pleft</p></div>
+            <div style="text-align:left;margin-left:3%">@Html.Raw(@Model.endetail)</div>
+            <br />
+            <p><a href="/home/Enok/@Model.card_id"><img src="~/images/enico27.png" style="width:50%"></a></p>
+        </div>
+    </div>
+   
+</body>
+</html>
+

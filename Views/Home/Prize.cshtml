@@ -1,0 +1,51 @@
+﻿@model IEnumerable<iapm.Models.VTicket>
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>礼遇</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="bg3">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3><a href="/home/Index" style="position:absolute; left:-300px; top:10px;"><img src="~/images/home.png" /></a>
+                <img src="~/images/ifc 209 x 100.png" /><a href="/home/index"><img src="/images/back.png" style="margin-top:10px;"/></a></h3>
+        </header>
+        <h6>累积金牌：@ViewBag.totalCount</h6>
+        <div class="prize">
+            
+            <h3><img src="/images/ico21.png" /><br />奖品一经兑换，不可退换。<br />数量有限，先到先得。</h3>
+            <ul>
+
+@foreach (var item in Model)
+{
+                <li>
+                    <div class="prizePic">
+                        <div><a href="/Home/PrizeDetail/@Html.DisplayFor(modelItem => item.Ticketid)"><img src='http://ifc.cjoy.cn/@Html.DisplayFor(modelItem => item.detailImg)'/></a></div>
+                     
+                            <p class="p1">
+                                @Html.DisplayFor(modelItem => item.title)
+                            </p>
+                            <p class="p2"> @Html.DisplayFor(modelItem => item.iconcount) 枚</p>
+                      
+                    </div>
+                    <div class="number">
+                        <span>数量：@Html.DisplayFor(modelItem => item.quantity)/尚余：@item.kqleft</span>
+                        <p><a href="/Home/Ok/@item.card_id"> <img src="/images/ico27.png"></a></p>
+                    </div>
+                </li>         
+}
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>首页</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/com.css" rel="stylesheet" type="text/css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="bg4">
+    <div class="wrap">
+        <header class="head clearfix">
+            <h3><img src="~/images/ifc 209 x 100.png" /></h3>
+        </header>
+        <!--兑换券-->
+        <p style="text-align:right;width:90%; margin-top:5px;"><a href="/home/NoIndex">中文</a> |<a href="/home/EnNoIndex">ENGLISH</a> </p>
+        <div class="storyBegin">
+            <p><img src="/images/enico15.png"></p>
+            <div style="height:153px"></div>
+        </div>
+
+
+        <div class="doMore">
+            <a href="javascript:void(0)" onclick="agree()"><img src="~/images/enico111111.png"></a><br />
+            <a href="/home/EnRulebake"><img src="/images/enico17.png"></a><br />
+            <a href="javascript:void(0)" onclick="agree()"><img src="/images/enico333.png"></a><br />
+            <a href="javascript:void(0)" onclick="agree()"><img src="~/images/enico222.png"></a>
+        </div>
+        <div class="agreediv">
+            <p>Agree Terms and Conditions</p>
+            <input type="button" value="sure" class="sure" />
+
+        </div>
+        <div class="agreediv2">
+            <p>please visit  iapm mall and join the game!</p>
+            <input type="button" value="sure" class="sure" />
+
+        </div>
+        <div class="agreeIt"><span><label><input type="checkbox" id="agree" /><a href="/Home/EnTiaoKuanBake">Agree Terms and Conditions</a> </label></span></div>
+    </div>
+    <div class="backdiv"></div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        function agree() {
+            if ($("#agree").attr("checked")) {
+                // alert("请到iapm商场开始游戏！")
+
+                    $(".agreediv2").show();
+                    $(".backdiv").show();
+
+            }
+            else {
+               // alert("请同意条款！");
+
+                   $(".agreediv").show();
+                    $(".backdiv").show();
+
+
+            }
+          
+            $(".agreediv2 .sure").on("click", function () {
+                $(".agreediv2").hide();
+                $(".backdiv").hide();
+
+            })
+        }
+        $(".agreediv .sure").on("click", function () {
+            $(".agreediv").hide();
+            $(".backdiv").hide();
+
+        })
+       
+
+    </script>
+
+</body>
+</html>
+

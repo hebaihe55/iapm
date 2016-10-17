@@ -1,0 +1,33 @@
+/********************************
+ *
+ *  说明：WanXingWei
+ *
+ ********************************//* 公用样式 */
+* {margin:0;padding:0; box-sizing:border-box;}
+html,body,address,blockquote,div,dl,form,h1,h2,h3,h4,h5,h6,ol,p,pre,table,ul,dd,dt,li,tbody,td,tfoot,th,thead,tr,button,del,ins,map,object,a,abbr,acronym,b,bdo,big,br,cite,code,dfn,em,i,img,kbd,q,samp,small,span,strong,sub,sup,tt,var,legend,fieldset {margin: 0;padding: 0;border:none;}
+body {font-family: \5FAE\8F6F\96C5\9ED1; color:#575556; font-size: 14px;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display: block;margin:0;padding:0;list-style:none;}
+table {border-collapse: collapse;border-spacing: 0;}
+caption,th {text-align: left;}
+ol,ul {list-style: none;}
+address,caption,cite,code,dfn,em,th,var {font-style: normal;font-weight: normal;}
+img,fieldset,abbr,acronym {border: 0;}
+img {height: auto;width: auto\9;outline:none; width:100%;}
+a,h1,h2,h3,h4,h5,h6,p {font-family: \5FAE\8F6F\96C5\9ED1;font-weight: normal;padding:0;margin:0 auto;outline:none;}
+h1,h2,h3,h4,h5,h6 { font-weight:bold;}
+h1 {font-size: 20px;}
+h2 {font-size: 18px;}
+h3 {font-size: 16px;}
+h4 {font-size: 14px;}
+h5 {font-size: 12px;}
+h6 {font-size: 12px;}
+p {line-height: 20px;font-size: 14px;}
+/* reset webkit search input styles */
+input[type=search] {-webkit-appearance: none;outline: none;}
+input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button {display: none;}
+/********** 文本超出显示省略号 Ellipsis **********/
+.text-autocut,.text-ellipsis {overflow: hidden;white-space: nowrap;-webkit-text-overflow: ellipsis;-khtml-text-overflow: ellipsis;-icab-text-overflow: ellipsis;-moz-text-overflow: ellipsis;-o-text-overflow: ellipsis;text-overflow: ellipsis;}
+a {color: #333;text-decoration: none;font-size: 14px;-webkit-appearance:none; -o-appearance:none;}
+a:hover {color: #333;text-decoration:none; outline:none; -webkit-appearance:none; -o-appearance:none;}
+.clearfix:before,.clearfix:after{display: table;content: " ";clear: both;}
+a,img,button,input,textarea{-webkit-tap-highlight-color:rgba(255,255,255,0);}

@@ -20,5 +20,9 @@ namespace iapm.Models
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Card> Cards { get; set; }
         public DbSet<ImgManager> ImgManagers { get; set; }
+        public DbSet<Report1> Report1s { get; set; }
+        public DbSet<Report2> Report2s { get; set; }
+
+        public DbSet<Report3> Report3s { get; set; }
     }
 }

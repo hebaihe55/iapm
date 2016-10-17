@@ -1,0 +1,86 @@
+﻿@model IEnumerable<iapm.Models.Report3>
+
+@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+    ViewBag.Title = "汇总数据";
+
+}
+<h1 class="page-title">汇总数据</h1>
+<div class="btn-toolbar">
+
+</div>
+<div class="well">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>摇一摇人数</th>
+                <th>摇到金币人数</th>
+                <th>参与游戏次数</th>
+                <th>发出金币</th>
+                <th>兑换奖品</th>
+
+                <th>LG2</th>
+                <th>LG1</th>
+                <th>L1</th>
+                <th>L2</th>
+                <th>L3</th>
+                <th>L4</th>
+                <th>L5</th>
+                <th>L6</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3pnum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3jbnum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3cynum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3fc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3prize)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3LG2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3LG1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3L1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3L2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3L3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3L4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3L5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R3L6)
+                    </td>
+                  
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

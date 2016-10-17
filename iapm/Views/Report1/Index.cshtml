@@ -1,0 +1,49 @@
+﻿@model IEnumerable<iapm.Models.Report1>
+
+@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+    ViewBag.Title = "总体报表";
+
+}
+<h1 class="page-title">总体报表</h1>
+<div class="btn-toolbar">
+
+</div>
+<div class="well">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>摇周边人数</th>
+                <th>摇周边次数</th>
+                <th>点击人数</th>
+                <th>点击次数</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R1date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R1pnum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R1cnum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R1dianji)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R1cishu)
+                    </td>
+                   
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

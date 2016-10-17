@@ -1,0 +1,55 @@
+﻿@model IEnumerable<iapm.Models.ImgManager>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<h2>样式管理</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+         图片
+        </th>
+        <th>
+            图片名
+        </th>
+        <th>
+           图片尺寸（宽*高）
+        </th>
+        <th>
+            所属页面
+        </th>
+        <th>
+           时间
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+         <img src="@item.imgurl" style="width:200px; height:100px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgsize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pagename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cctime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+    
+        </td>
+    </tr>
+}
+
+</table>

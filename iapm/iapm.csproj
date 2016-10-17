@@ -940,6 +940,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IbeaconsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\Report1Controller.cs" />
+    <Compile Include="Controllers\Report2Controller.cs" />
+    <Compile Include="Controllers\Report3Controller.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\WechatController.cs" />
     <Compile Include="Global.asax.cs">
@@ -960,6 +963,9 @@
     <Compile Include="Models\Ibeacon.cs" />
     <Compile Include="Models\ImgManager.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Report1.cs" />
+    <Compile Include="Models\Report2.cs" />
+    <Compile Include="Models\Report3.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\WechatUser.cs" />
@@ -1120,6 +1126,21 @@
     <Content Include="Views\AdminImgManagers\Index.cshtml" />
     <Content Include="Views\Home\GameOver.cshtml" />
     <Content Include="Views\Home\Rulebake1.cshtml" />
+    <Content Include="Views\Report1\Create.cshtml" />
+    <Content Include="Views\Report1\Delete.cshtml" />
+    <Content Include="Views\Report1\Details.cshtml" />
+    <Content Include="Views\Report1\Edit.cshtml" />
+    <Content Include="Views\Report1\Index.cshtml" />
+    <Content Include="Views\Report2\Create.cshtml" />
+    <Content Include="Views\Report2\Delete.cshtml" />
+    <Content Include="Views\Report2\Details.cshtml" />
+    <Content Include="Views\Report2\Edit.cshtml" />
+    <Content Include="Views\Report2\Index.cshtml" />
+    <Content Include="Views\Report3\Create.cshtml" />
+    <Content Include="Views\Report3\Delete.cshtml" />
+    <Content Include="Views\Report3\Details.cshtml" />
+    <Content Include="Views\Report3\Edit.cshtml" />
+    <Content Include="Views\Report3\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

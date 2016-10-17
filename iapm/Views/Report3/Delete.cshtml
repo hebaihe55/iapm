@@ -1,0 +1,144 @@
+﻿@model iapm.Models.Report3
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Report3</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.R3date)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3date)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3pnum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3pnum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3jbnum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3jbnum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3cynum)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3cynum)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3fc)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3fc)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3prize)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3prize)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3LG2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3LG2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3LG1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3LG1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3L1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3L1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3L2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3L2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3L3)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3L3)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3L4)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3L4)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3L5)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3L5)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.R3L6)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.R3L6)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<iapm.Models.Ibeacon>
+
+@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.floor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bueness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.demo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.minifen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.maxifen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dbtime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.detime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dfen)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.floor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bueness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.demo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.minifen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maxifen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dbtime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dfen)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Ibeaconid }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Ibeaconid }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Ibeaconid })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

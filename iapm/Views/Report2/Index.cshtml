@@ -1,0 +1,36 @@
+﻿@model IEnumerable<iapm.Models.Report2>
+
+@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+    ViewBag.Title = "透视表";
+}
+<h1 class="page-title">透视表</h1>
+<div class="btn-toolbar">
+ 
+</div>
+<div class="well">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>行标签</th>
+                <th>计数项</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R2biaoqian)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.R2jishu)
+                    </td>
+                   
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

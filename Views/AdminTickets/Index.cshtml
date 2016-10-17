@@ -1,0 +1,73 @@
+﻿@model IEnumerable<iapm.Models.Ticket>
+
+@{
+    ViewBag.Title = "卡券管理";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("添加", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iconcount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.btime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.etime)
+        </th>
+      
+     
+     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iconcount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.btime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.etime)
+        </td>
+        <td>
+          <img src="@Html.DisplayFor(modelItem => item.detailImg)" style="width:100px; height:auto"  />
+        </td>
+     
+      
+        <td>
+            @Html.ActionLink("修改", "Edit", new { id=item.Ticketid }) |
+            @Html.ActionLink("详情", "Details", new { id=item.Ticketid }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.Ticketid })
+           
+        </td>
+    </tr>
+}
+
+</table>

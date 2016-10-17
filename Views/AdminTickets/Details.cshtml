@@ -1,0 +1,115 @@
+﻿@model iapm.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.entitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.entitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iconcount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iconcount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.btime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.btime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.etime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.etime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.detailImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detailImg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.card_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.card_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ctime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ctime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flag)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ticketid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
