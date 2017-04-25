@@ -17,7 +17,7 @@
         <header class="head clearfix">
             <h3><a href="/home/Index" style="position:absolute; left:-300px; top:6px;"><img src="@ViewBag.img10" /></a><img src="/images/logo.png" /></h3>
         </header>
-        <div style="position:relative; background:url('@ViewBag.img1') no-repeat #def4d6 0 0px;background-size: 100% auto; height:100%; padding-left:30px"  >
+        <div style="position:relative; background:url('@ViewBag.img1') no-repeat #99d2cb 0 0px;background-size: 100% auto; height:100%; padding-left:30px"  >
           <div style="width:200px;font-size:18px; margin-top:10px;float:left;">倒计时：<label id="seconds">10</label>秒</div>
            
                 
@@ -85,7 +85,7 @@ var t = setInterval("timedCount()", 1000);
                     }
 
                     //设置临界值,这个值可根据自己的需求进行设定，默认就3000也差不多了
-                    var shakeThreshold = 500;
+                    var shakeThreshold = 50;
                     //设置最后更新时间，用于对比
                     var lastUpdate = 0;
                     //设置位置速率
@@ -154,7 +154,7 @@ var t = setInterval("timedCount()", 1000);
 
 
             wx.onMenuShareTimeline({
-                title: 'iapm摇萌熊 赢奖赏 等你来参加！', // 分享标题
+                title: 'iapm摇一摇 赢奖赏 等你来参加！', // 分享标题
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
 
@@ -169,8 +169,8 @@ var t = setInterval("timedCount()", 1000);
 
 
             wx.onMenuShareAppMessage({
-                title: 'iapm摇萌熊 赢奖赏 等你来参加！', // 分享标题
-                desc: '我在iapm摇萌熊 赢奖赏 等你来参加！', // 分享描述
+                title: 'iapm摇一摇 赢奖赏 等你来参加！', // 分享标题
+                desc: '我在iapm摇一摇 赢奖赏 等你来参加！', // 分享描述
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
                 type: '', // 分享类型,music、video或link，不填默认为link

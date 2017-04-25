@@ -22,7 +22,11 @@ namespace iapm.Models
         public DbSet<ImgManager> ImgManagers { get; set; }
         public DbSet<Report1> Report1s { get; set; }
         public DbSet<Report2> Report2s { get; set; }
-
         public DbSet<Report3> Report3s { get; set; }
+        public DbSet<Report4> Report4s { get; set; }
+        public DbSet<Report5> Report5s { get; set; }
+        public DbSet<Report6> Report6s { get; set; }
+
+        public System.Data.Entity.DbSet<iapm.Models.Report7> Report7 { get; set; }
     }
 }

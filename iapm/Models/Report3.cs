@@ -9,8 +9,7 @@ namespace iapm.Models
     {
         public int Report3id { set; get; }
         //日期
-        public string R3date { set; get; }
-
+        public DateTime R3date { set; get; }
 
         //摇一摇人数
         public int R3pnum { set; get; }

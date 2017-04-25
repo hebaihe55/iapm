@@ -5,7 +5,7 @@
     ViewBag.Title = "汇总数据";
 
 }
-<h1 class="page-title">汇总数据</h1>
+<h1 class="page-title">已兑换记录</h1>
 <div class="btn-toolbar">
 
 </div>
@@ -13,21 +13,48 @@
     <table class="table">
         <thead>
             <tr>
-                <th>日期</th>
-                <th>摇一摇人数</th>
-                <th>摇到金币人数</th>
-                <th>参与游戏次数</th>
-                <th>发出金币</th>
-                <th>兑换奖品</th>
-
-                <th>LG2</th>
-                <th>LG1</th>
-                <th>L1</th>
-                <th>L2</th>
-                <th>L3</th>
-                <th>L4</th>
-                <th>L5</th>
-                <th>L6</th>
+                <th>
+                    日期
+                </th>
+                <th>
+                    摇一摇人数
+                </th>
+                <th>
+                    摇到金币人数
+                </th>
+                <th>
+                    参与游戏次数
+                </th>
+                <th>
+                    发出金币
+                </th>
+                <th>
+                    兑换奖品
+                </th>
+                <th>
+                    LG2
+                </th>
+                <th>
+                    LG1
+                </th>
+                <th>
+                    L1
+                </th>
+                <th>
+                    L2
+                </th>
+                <th>
+                    L3
+                </th>
+                <th>
+                    L4
+                </th>
+                <th>
+                    L5
+                </th>
+                <th>
+                    L6
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -77,7 +104,11 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.R3L6)
                     </td>
-                  
+                    @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Report3id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Report3id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Report3id })
+                    </td>*@
                 </tr>
             }
 

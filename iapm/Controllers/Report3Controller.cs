@@ -10,7 +10,7 @@ using iapm.Models;
 
 namespace iapm.Controllers
 {
-    public class Report3Controller : BaseController
+    public class Report3Controller : Controller
     {
         private IAMPDBContext db = new IAMPDBContext();
 

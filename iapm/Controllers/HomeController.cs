@@ -23,6 +23,10 @@ namespace iapm.Controllers
         public ActionResult Subscribe(int id)
         {
 
+            if (id == 0)
+            {
+                id = 1;
+            }
 
             //if (id != 22)
             //{
@@ -54,7 +58,7 @@ namespace iapm.Controllers
 
         public ActionResult Subview()
         {
-           
+         
             return View();
         }
 
@@ -103,6 +107,10 @@ namespace iapm.Controllers
         {
 
 
+           // System.Web.HttpContext.Current.Session["uid"]= "o6eaWjto8brQ0JSMD-b4SD399WYk";
+
+           // System.Web.HttpContext.Current.Session["bid"] =4;
+
             imglist = db.ImgManagers.ToList();
 
 
@@ -137,6 +145,10 @@ namespace iapm.Controllers
         public ActionResult Rulebake1()
         {
 
+            imglist = db.ImgManagers.ToList();
+
+
+            ViewBag.img1 = imglist.ToList()[8].imgurl;
             return View();
         }
 
@@ -164,9 +176,6 @@ namespace iapm.Controllers
         public ActionResult L1()
         {
             imglist = db.ImgManagers.ToList();
-
-
-          
             ViewBag.img11 = imglist.ToList()[10].imgurl;
             ViewBag.img12 = imglist.ToList()[11].imgurl;
 
@@ -176,7 +185,12 @@ namespace iapm.Controllers
         {
             return View();
         }
+        public ActionResult tc()
+        {
 
+
+            return View();
+        }
 
         public ActionResult L3()
         {
@@ -200,11 +214,19 @@ namespace iapm.Controllers
 
         public ActionResult Rulebake()
         {
+            imglist = db.ImgManagers.ToList();
+
+
+            ViewBag.img1 = imglist.ToList()[8].imgurl;
             return View();
         }
 
         public ActionResult EnRulebake()
         {
+            imglist = db.ImgManagers.ToList();
+
+
+            ViewBag.img1 = imglist.ToList()[8].imgurl;
             return View();
         }
 
@@ -282,7 +304,7 @@ namespace iapm.Controllers
         }
         public ActionResult GameMap()
         {
-return View();
+            return View();
         }
         public ActionResult GameBegin()
         {
@@ -400,7 +422,7 @@ return View();
 
             //获取用户id
             ac.OpenId = System.Web.HttpContext.Current.Session["uid"].ToString();
-
+         
             ViewBag.uid = ac.OpenId;
 
             ac.Ibeaconid = ibeacon.Ibeaconid;
@@ -441,15 +463,15 @@ return View();
 
 
 
-            if (totalCount <= 200)
+            if (totalCount <= 500)
             {
                 ViewBag.fee = ac.gardenFee;
             }
             else
             {
-                //ac.gardenFee = 10;
-                //ViewBag.fee = 10;
-                ViewBag.fee = ac.gardenFee;
+                ac.gardenFee = 5;
+                ViewBag.fee = 5;
+               // ViewBag.fee = ac.gardenFee;
             }
 
             //历史分数
@@ -696,8 +718,16 @@ return View();
         /*英文分割线*/
         public ActionResult EnIndex()
         {
+            imglist = db.ImgManagers.ToList();
 
-        
+
+            ViewBag.img1 = imglist.ToList()[0].imgurl;
+            ViewBag.img2 = imglist.ToList()[13].imgurl;
+            ViewBag.img3 = imglist.ToList()[14].imgurl;
+            ViewBag.img4 = imglist.ToList()[15].imgurl;
+            ViewBag.img5 = imglist.ToList()[16].imgurl;
+            ViewBag.img6 = imglist.ToList()[17].imgurl;
+
             return View();
         }
 
@@ -883,6 +913,14 @@ return View();
 
 
             ViewBag.img1 = imglist.ToList()[7].imgurl;
+
+
+
+            ViewBag.img9 = imglist.ToList()[9].imgurl;
+
+            ViewBag.img10 = imglist.ToList()[10].imgurl;
+            ViewBag.img11 = imglist.ToList()[11].imgurl;
+            ViewBag.img12 = imglist.ToList()[12].imgurl;
 
             ViewBag.appId = Utils.WeHelper.appid = ConfigurationManager.AppSettings["AppID"].ToString();
             Utils.WeHelper.secret = ConfigurationManager.AppSettings["AppSecret"].ToString();

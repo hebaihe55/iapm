@@ -192,8 +192,6 @@ namespace iapm.Controllers
 
         private void DowithText(Utils.WxPayData WPD)
         {
-
-
             if (WPD.GetValue("Content").ToString() == "红包")
             {
                 Response.Write("");
@@ -204,8 +202,6 @@ namespace iapm.Controllers
                 Response.Write("");
                 Response.End();
             }
-
-
         }
         protected override void Dispose(bool disposing)
         {

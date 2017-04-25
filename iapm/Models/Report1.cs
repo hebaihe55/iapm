@@ -9,9 +9,7 @@ namespace iapm.Models
     {
         public int Report1id { set; get; }
         //日期
-     
         public string R1date { set; get; }
-
         //周边人数
         public int R1pnum { set; get; }
         //周边次数

@@ -283,6 +283,8 @@
     <Content Include="images\astroboy-2.jpg" />
     <Content Include="images\back.png" />
     <Content Include="images\background.png" />
+    <Content Include="images\bg3.jpg" />
+    <Content Include="images\bg31.jpg" />
     <Content Include="images\bg5.gif" />
     <Content Include="images\bg5.jpg" />
     <Content Include="images\btn1.png" />
@@ -418,6 +420,7 @@
     <Content Include="images\tbanner1.jpg" />
     <Content Include="images\tbanner2.jpg" />
     <Content Include="images\tbanner3.jpg" />
+    <Content Include="images\tc.jpg" />
     <Content Include="images\tel.png" />
     <Content Include="images\b.gif" />
     <Content Include="images\pp1.jpg" />
@@ -442,6 +445,7 @@
     <Content Include="js\bootstrap-datetimepicker.js" />
     <Content Include="js\bootstrap-datetimepicker.min.js" />
     <Content Include="js\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="js\highcharts.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="lib\bootstrap\css\bootstrap.css" />
     <Content Include="lib\bootstrap\css\bootstrap.min.css" />
@@ -905,6 +909,7 @@
     <Content Include="ckeditor\LICENSE.md" />
     <Content Include="ckeditor\README.md" />
     <None Include="Properties\PublishProfiles\iapm.pubxml" />
+    <None Include="Properties\PublishProfiles\iapmfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -943,6 +948,10 @@
     <Compile Include="Controllers\Report1Controller.cs" />
     <Compile Include="Controllers\Report2Controller.cs" />
     <Compile Include="Controllers\Report3Controller.cs" />
+    <Compile Include="Controllers\Report4Controller.cs" />
+    <Compile Include="Controllers\Report5Controller.cs" />
+    <Compile Include="Controllers\Report6Controller.cs" />
+    <Compile Include="Controllers\Report7Controller.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\WechatController.cs" />
     <Compile Include="Global.asax.cs">
@@ -966,6 +975,10 @@
     <Compile Include="Models\Report1.cs" />
     <Compile Include="Models\Report2.cs" />
     <Compile Include="Models\Report3.cs" />
+    <Compile Include="Models\Report4.cs" />
+    <Compile Include="Models\Report5.cs" />
+    <Compile Include="Models\Report6.cs" />
+    <Compile Include="Models\Report7.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\WechatUser.cs" />
@@ -1136,11 +1149,32 @@
     <Content Include="Views\Report2\Details.cshtml" />
     <Content Include="Views\Report2\Edit.cshtml" />
     <Content Include="Views\Report2\Index.cshtml" />
+    <Content Include="Views\Report4\Create.cshtml" />
+    <Content Include="Views\Report4\Delete.cshtml" />
+    <Content Include="Views\Report4\Details.cshtml" />
+    <Content Include="Views\Report4\Edit.cshtml" />
+    <Content Include="Views\Report4\Index.cshtml" />
+    <Content Include="Views\Report6\Create.cshtml" />
+    <Content Include="Views\Report6\Delete.cshtml" />
+    <Content Include="Views\Report6\Details.cshtml" />
+    <Content Include="Views\Report6\Edit.cshtml" />
+    <Content Include="Views\Report6\Index.cshtml" />
     <Content Include="Views\Report3\Create.cshtml" />
     <Content Include="Views\Report3\Delete.cshtml" />
     <Content Include="Views\Report3\Details.cshtml" />
     <Content Include="Views\Report3\Edit.cshtml" />
     <Content Include="Views\Report3\Index.cshtml" />
+    <Content Include="Views\Report7\Create.cshtml" />
+    <Content Include="Views\Report7\Delete.cshtml" />
+    <Content Include="Views\Report7\Details.cshtml" />
+    <Content Include="Views\Report7\Edit.cshtml" />
+    <Content Include="Views\Report7\Index.cshtml" />
+    <Content Include="Views\Report5\Create.cshtml" />
+    <Content Include="Views\Report5\Delete.cshtml" />
+    <Content Include="Views\Report5\Details.cshtml" />
+    <Content Include="Views\Report5\Edit.cshtml" />
+    <Content Include="Views\Report5\Index.cshtml" />
+    <Content Include="Views\Home\tc.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

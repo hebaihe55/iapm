@@ -15,13 +15,13 @@
 <body >
     <div class="wrap">
         <header class="head clearfix">
-            <h3><a href="/home/EnIndex" style="position:absolute; left:-260px; top:6px;"><img src="~/images/home.png" /></a><img src="/images/logo.png" /></h3>
+            <h3><a href="/home/EnIndex" style="position:absolute; left:-260px; top:6px;"><img src="@ViewBag.img10" /></a><img src="/images/logo.png" /></h3>
         </header>
-        <div style="position:relative; background:url(/images/bg5.gif) no-repeat #fdf9e3 0 0px;background-size: 100% auto; height:100%; padding-left:30px"  >
+        <div style="position:relative; background:url('@ViewBag.img1') no-repeat #99d2cb 0 0px;background-size: 100% auto; height:100%; padding-left:30px"  >
           <div style="width:200px;font-size:18px; margin-top:10px;float:left;">Count Down：<label id="seconds">10</label>s</div>
            
             <div>
-                <img id="jb" src="~/images/jb.png" style="margin-top:100px;" />
+                <img id="jb" src="@ViewBag.img12" style="margin-top:100px;" />
             </div>
          
         </div>
@@ -54,7 +54,7 @@
                                     $(".bgFix").fadeIn();
                                     $(".duihuan").fadeIn();
                                     $(".mark").fadeIn();
-                $("#jb").attr("src", "/images/jb.png");
+                                    $("#jb").attr("src", "@ViewBag.img12");
                 $("#jifen").show();
                                     clearInterval(t);
                                 }
@@ -108,11 +108,11 @@
 
 	            //播放音效
 
-	            $("#jb").attr("src", "/images/a.gif");
+                                $("#jb").attr("src", "@ViewBag.img9");
 
                             }
                             else {
-	            $("#jb").attr("src", "/images/jb.png");
+                                $("#jb").attr("src", "@ViewBag.img12");
                             }
 
                             lastShakeX = curShakeX;
@@ -139,7 +139,7 @@
 
 
             wx.onMenuShareTimeline({
-                title: 'iapm摇萌熊 赢奖赏 等你来参加！', // 分享标题
+                title: 'iapm摇一摇 赢奖赏 等你来参加！', // 分享标题
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
 
@@ -154,8 +154,8 @@
 
 
             wx.onMenuShareAppMessage({
-                title: 'iapm摇萌熊 赢奖赏 等你来参加！', // 分享标题
-                desc: '我在iapm摇萌熊 赢奖赏 等你来参加！', // 分享描述
+                title: 'iapm摇一摇 赢奖赏 等你来参加！', // 分享标题
+                desc: '我在iapm摇一摇 赢奖赏 等你来参加！', // 分享描述
                 link: 'http://iapm.cjoy.cn/home/NoIndex', // 分享链接
                 imgUrl: 'http://iapm.cjoy.cn/images/share1.jpg', // 分享图标
                 type: '', // 分享类型,music、video或link，不填默认为link
